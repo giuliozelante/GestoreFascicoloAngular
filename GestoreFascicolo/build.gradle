@@ -1,0 +1,56 @@
+plugins {
+  id "com.eriwen.gradle.js" version "1.12.1"
+}
+// Declare your sources
+javascript.source {
+    dev {
+        js {
+            srcDir 'WebContent/js'
+            include "*.js"
+            exclude "*.min.js"
+        }
+    }
+    prod {
+        js {
+            srcDir 'WebContent/js'
+            include "*.min.js"
+        }
+    }
+}
+// Configure the built-in task
+combineJs {
+    source = javascript.source.dev.js.files
+    dest = file("${buildDir}/all.js")
+}
+
+// Create new CombineJsTasks if you have multiple sets of JS files
+task jsDev(type: com.eriwen.gradle.js.tasks.CombineJsTask) {
+    source = ["${projectDir}/js/file1.js", "${projectDir}/js/file2.js"]
+    dest = file("${buildDir}/all-debug.js")
+}
+
+task jsProd(type: com.eriwen.gradle.js.tasks.CombineJsTask) {
+    source = ["${projectDir}/js/file1.js", "${projectDir}/js/file2.js"]
+    dest = file("${buildDir}/all.js")
+}
+
+minifyJs {
+    source = combineJs
+    dest = file("${buildDir}/all-min.js")
+    sourceMap = file("${buildDir}/all.sourcemap.json")
+    closure {
+        warningLevel = 'QUIET'
+    }
+}
+
+gzipJs {
+    source = minifyJs
+    dest = file("${buildDir}/all-min.js")
+}
+
+jshint {
+    tasks.jshint.source = javascript.source.dev.js.files
+    tasks.jshint.dest = file("${buildDir}/jshint.out")
+    tasks.jshint.reporter = 'checkstyle'
+    jshint.options = [expr: "true", unused: "true"]
+}

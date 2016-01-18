@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="true" key="J2EE_EXPORT_OVERWRITE"/>
+	<item value="true" key="J2EE_EXPORT_SOURCE"/>
+	<list key="J2EE_IMPORT_EAR">
+		<item value="C:\Users\Giulio Zelante\Desktop\GestoreFascicoloEAR.ear"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_EAR">
+		<item value="C:\lavoro\GestoreFascicolo\Rilasci\2.1.22\GestoreFascicoloEAR.ear"/>
+		<item value="C:\lavoro\GestoreFascicolo\Rilasci\2.1.21\GestoreFascicoloEAR.ear"/>
+		<item value="C:\lavoro\GestoreFascicolo\Rilasci\2.1.20\GestoreFascicoloEAR.ear"/>
+		<item value="C:\lavoro\GestoreFascicolo\Rilasci\2.1.19\GestoreFascicoloEAR.ear"/>
+		<item value="C:\lavoro\GestoreFascicolo\Rilasci\2.1.16\GestoreFascicoloEAR.ear"/>
+		<item value="C:\lavoro\GestoreFascicolo\Rilasci\2.1.15\GestoreFascicoloEAR.ear"/>
+	</list>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="was.base.v61"/>
+	</list>
+</section>

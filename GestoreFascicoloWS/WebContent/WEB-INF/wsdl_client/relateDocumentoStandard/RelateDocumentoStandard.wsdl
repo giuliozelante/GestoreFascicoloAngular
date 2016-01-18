@@ -1,0 +1,58 @@
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<wsdl:definitions xmlns:tns="http://bpel.relatedocumentostandard.equitalia.it" 
+xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+xmlns:xmime="http://www.w3.org/2005/05/xmlmime" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" 
+xmlns:ns1="http://xsd.bpel.relatedocumentostandard.equitalia.it"  
+targetNamespace="http://bpel.relatedocumentostandard.equitalia.it">
+	<wsdl:types>
+		<xsd:schema elementFormDefault="qualified" targetNamespace="http://xsd.bpel.relatedocumentostandard.equitalia.it" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xsd:include schemaLocation="RelateDocumentoStandard.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="WSACallBackToHeader">
+		<wsdl:part name="CallBackTo" element="ns1:CallBackTo"/>
+	</wsdl:message>
+	<wsdl:message name="GetRelateDocumentoRequest">
+		<wsdl:part name="part1" element="ns1:GetRelateDocumentoRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetRelateDocumentoResponse">
+		<wsdl:part name="part1" element="ns1:GetRelateDocumentoResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetRelateDocumentoFault">
+		<wsdl:part name="fault" element="ns1:GetRelateDocumentoFault"/>
+	</wsdl:message>
+	<wsdl:portType name="RelateDocumentoStandardPortType">
+		<wsdl:operation name="getRelateDocumentoStandard">
+			<wsdl:input message="tns:GetRelateDocumentoRequest"/>
+			<wsdl:output message="tns:GetRelateDocumentoResponse"/>
+			<wsdl:fault name="GetRelateDocumentoFault" message="tns:GetRelateDocumentoFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="RelateDocumentoStandardSOAP11Binding" type="tns:RelateDocumentoStandardPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getRelateDocumentoStandard">
+			<soap:operation soapAction="getRelateDocumentoStandard" style="document"/>
+			<wsdl:input>
+				<soap:body parts="part1" use="literal"/>
+				<soap:header message="tns:WSACallBackToHeader" part="CallBackTo" use="literal" wsdl:required="1"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="GetRelateDocumentoFault">
+				<soap:fault name="GetRelateDocumentoFault"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="RelateDocumentoStandard">
+		<wsdl:port name="RelateDocumentoStandardSOAP11port_http" binding="tns:RelateDocumentoStandardSOAP11Binding">
+			<soap:address location="http://localhost:8080/axis2/services/RelateDocumentoStandard"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

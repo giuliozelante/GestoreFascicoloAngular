@@ -1,0 +1,59 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://bpel.estrattoconto.equitalia.it" name="EstrattoConto" targetNamespace="http://bpel.estrattoconto.equitalia.it">
+  <types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://bpel.estrattoconto.equitalia.it">
+
+            <element name="EstrattoContoRequest">
+                <complexType>
+                    <sequence>
+                    	<element maxOccurs="1" minOccurs="1" name="codiceFiscale" type="string"></element>
+                    	<element maxOccurs="1" minOccurs="1" name="dataRichiesta" type="date"></element>
+                    	<element maxOccurs="1" minOccurs="1" name="tipologia" type="string"></element>
+                    </sequence>
+                </complexType>
+            </element>
+
+            <element name="EstrattoContoResponse">
+                <complexType>
+                    <sequence>
+                    	<element name="esito" type="string" maxOccurs="1" minOccurs="1" ></element>
+						<element name="descrizioneEsito" type="string" maxOccurs="1" minOccurs="1" ></element>
+                    	<element name="estrattoContoPdf" type="base64Binary" maxOccurs="1" minOccurs="0" ></element>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+  </types>
+  <message name="EstrattoContoResponseMessage">
+    <part name="payload" element="tns:EstrattoContoResponse">
+    </part>
+  </message>
+  <message name="EstrattoContoRequestMessage">
+    <part name="payload" element="tns:EstrattoContoRequest">
+    </part>
+  </message>
+  <portType name="EstrattoConto">
+    <operation name="process">
+      <input message="tns:EstrattoContoRequestMessage">
+    </input>
+      <output message="tns:EstrattoContoResponseMessage">
+    </output>
+    </operation>
+  </portType>
+  <binding name="EstrattoContoBinding" type="tns:EstrattoConto">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <operation name="process">
+      <soap:operation soapAction="http://bpel.estrattoconto.equitalia.it/process"></soap:operation>
+      <input>
+        <soap:body use="literal"></soap:body>
+      </input>
+      <output>
+        <soap:body use="literal"></soap:body>
+      </output>
+    </operation>
+  </binding>
+  <service name="EstrattoConto">
+    <port name="EstrattoContoPort" binding="tns:EstrattoContoBinding">
+      <soap:address location="http://192.168.64.1:9765/services/EstrattoConto/"></soap:address>
+    </port>
+  </service>
+</definitions>

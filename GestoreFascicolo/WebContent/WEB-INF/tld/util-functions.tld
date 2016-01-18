@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib 
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+
+    <display-name>Util Functions</display-name>    
+    <tlib-version>1.0</tlib-version>
+    <short-name>it.equitalia.gestorefascicolo.web</short-name>  
+    <uri>http://it.equitalia.gestorefascicolo.web/tld/functions/</uri>
+
+    <function>
+        <name>hasEntityItemChils</name>
+        <function-class>it.equitalia.gestorefascicolo.web.util.EntityItemUtils</function-class>
+        <function-signature>java.lang.Boolean hasEntityItemChils(it.equitalia.gestorefascicolows.dati.EntityItem, java.lang.Integer)</function-signature>
+    </function>
+    
+    
+    <function>
+        <name>getDistinctEntityIdsEntityItemChils</name>
+        <function-class>it.equitalia.gestorefascicolo.web.util.EntityItemUtils</function-class>
+        <function-signature>java.util.List getDistinctEntityIdsEntityItemChils(it.equitalia.gestorefascicolows.dati.EntityItem, java.lang.Integer)</function-signature>
+    </function>
+    
+    
+    <function>
+        <name>isValueData</name>
+        <function-class>it.equitalia.gestorefascicolo.web.util.DataValueRenderingType</function-class>
+        <function-signature>java.lang.Boolean isValueData(java.lang.String)</function-signature>
+    </function>
+    <function>
+    
+        <name>isValueHidden</name>
+        <function-class>it.equitalia.gestorefascicolo.web.util.DataValueRenderingType</function-class>
+        <function-signature>java.lang.Boolean isValueHidden(java.lang.String)</function-signature>
+    </function>
+    
+    <function>
+        <name>isValueValuta</name>
+        <function-class>it.equitalia.gestorefascicolo.web.util.DataValueRenderingType</function-class>
+        <function-signature>java.lang.Boolean isValueValuta(java.lang.String)</function-signature>
+    </function>
+    
+    <function>
+        <name>isValueLink</name>
+        <function-class>it.equitalia.gestorefascicolo.web.util.DataValueRenderingType</function-class>
+        <function-signature>java.lang.Boolean isValueLink(java.lang.String)</function-signature>
+    </function>
+    
+    
+    <function>
+        <name>hasDetailDataValues</name>
+        <function-class>it.equitalia.gestorefascicolo.web.util.EntityItemUtils</function-class>
+        <function-signature>java.lang.Boolean hasDetailDataValues(it.equitalia.gestorefascicolows.dati.DataValue)</function-signature>
+    </function>
+    
+    
+    <function>
+        <name>getDistinctTipoModello</name>
+        <function-class>it.equitalia.gestorefascicolo.web.util.EntityItemUtils</function-class>
+        <function-signature>java.util.List getDistinctTipoModello(it.equitalia.gestorefascicolows.dati.EntityItem[] )</function-signature>
+    </function>
+    
+    
+    <function>
+        <name>getDocumentiEsattorialiPerTipoModello</name>
+        <function-class>it.equitalia.gestorefascicolo.web.util.EntityItemUtils</function-class>
+        <function-signature>java.util.List getDocumentiEsattorialiPerTipoModello(it.equitalia.gestorefascicolows.dati.EntityItem[], java.lang.String )</function-signature>
+    </function>
+     
+     
+    <function>
+        <name>hasRenderingTypeVisibleDocumentoEsattoriale</name>
+        <function-class>it.equitalia.gestorefascicolo.web.util.EntityItemUtils</function-class>
+        <function-signature>java.lang.Boolean hasRenderingTypeVisibleDocumentoEsattoriale(it.equitalia.gestorefascicolows.dati.DataValue)</function-signature>
+    </function>
+      
+      
+    <function>
+        <name>hasDataTypeDescrVisibleDocumentoEsattoriale</name>
+        <function-class>it.equitalia.gestorefascicolo.web.util.EntityItemUtils</function-class>
+        <function-signature>java.lang.Boolean hasDataTypeDescrVisibleDocumentoEsattoriale(it.equitalia.gestorefascicolows.dati.DataValue)</function-signature>
+    </function>
+      
+            
+    <function>
+        <name>getNumeroCartella</name>
+        <function-class>it.equitalia.gestorefascicolo.web.util.EntityItemUtils</function-class>
+        <function-signature>java.lang.String getNumeroCartella(it.equitalia.gestorefascicolows.dati.EntityItem)</function-signature>
+    </function>
+      
+
+    <function>
+        <name>formatDate</name>
+        <function-class>it.equitalia.gestorefascicolo.web.util.DateUtils</function-class>
+        <function-signature>java.lang.String formatDate(java.lang.String, java.lang.String, java.lang.String)</function-signature>
+    </function>
+</taglib>

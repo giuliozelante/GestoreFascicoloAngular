@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.springsource.ide.eclipse.gradle.launch">
+<stringAttribute key="org.eclipse.debug.core.ATTR_REFRESH_SCOPE" value="${workspace}"/>
+<stringAttribute key="org.springsource.ide.eclipse.gradle.launch.PROJECT" value="GestoreFascicolo"/>
+<stringAttribute key="org.springsource.ide.eclipse.gradle.launch.TASKTEXT" value="clean&#13;&#10;compileJava&#13;&#10;minifyCss&#13;&#10;minifyJs&#13;&#10;gzipCss&#13;&#10;gzipJs&#13;&#10;combineCss&#13;&#10;combineJs&#13;&#10;war"/>
+</launchConfiguration>

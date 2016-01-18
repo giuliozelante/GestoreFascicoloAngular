@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="C:\IBM\SDP\runtimes\base_v61\java" version="1.5.0">
+<bootpath>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\vm.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\core.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\charsets.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\graphics.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\security.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\ibmpkcs.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\ibmorb.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\ibmcfw.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\ibmorbapi.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\ibmjcefw.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\ibmjgssprovider.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\ibmjsseprovider2.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\ibmjaaslm.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\ibmjaasactivelm.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\ibmcertpathprovider.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\server.jar"/>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\xml.jar"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\IBM\SDP\runtimes\base_v61\java\jre\lib\ext"/>
+</extensionDirs>
+</libraryInfo>
+<libraryInfo home="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45" version="1.7.0_45">
+<bootpath>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\resources.jar"/>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\rt.jar"/>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\sunrsasign.jar"/>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\jsse.jar"/>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\jce.jar"/>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\charsets.jar"/>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\jfr.jar"/>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre" version="1.7.0_45">
+<bootpath>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\resources.jar"/>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\rt.jar"/>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\sunrsasign.jar"/>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\jsse.jar"/>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\jce.jar"/>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\charsets.jar"/>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\jfr.jar"/>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\lavoro\MyEclipse Blue 2014\binary\com.sun.java.jdk7.win32.x86_1.7.0.u45\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

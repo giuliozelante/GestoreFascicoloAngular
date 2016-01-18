@@ -1,0 +1,4 @@
+gen 16, 2016 5:30:51 PM com.genuitec.pulse.client.deliverypackage.runtime.internal.Activator initializeLoggers
+Informazioni: Package starting up at Sat Jan 16 17:30:51 CET 2016
+gen 16, 2016 5:30:54 PM com.genuitec.pulse.client.deliverypackage.runtime.UpdatesService checkForWorkspaceUpdates
+Informazioni: Latest version of package has already been enabled in the workspace; check finished in 4ms

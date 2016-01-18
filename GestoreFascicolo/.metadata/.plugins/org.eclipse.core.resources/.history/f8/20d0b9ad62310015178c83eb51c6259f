@@ -1,0 +1,52 @@
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function() {
+	$("#apriFascicolo").click(function(event){
+		$("#admin").validate({
+			submitHandler : function(form) {
+				otherParams();
+				$("div#loading").fadeIn(2000);
+				$.ajax({
+					url : '<s:url action="apriFascicolo"/>',
+					type : "POST",
+					data : $("form").serialize(),
+					success : onSuccess,
+					error : onError
+				});
+				return false;
+			}
+		});
+	});
+	$("#chiudiFascicolo").click(function(event) {
+		$("#admin").validate({
+			submitHandler : function(form) {
+				event.preventDefault();
+				otherParams();
+				$("div#loading").fadeIn(2000);
+				$.ajax({
+					url : '<s:url action="apriFascicolo"/>',
+					type : "POST",
+					data : $("form").serialize(),
+					success : onSuccess,
+					error : onError
+				});
+				return false;
+			}
+		});
+		event.preventDefault();
+	});
+
+				//modifica per bug su valorizzazione dell input other-params
+				function otherParams() {
+					$("#other-params").val(
+							$("#other-params").val().replace("?",
+									$("#admin_fascicolo_fascicoloId").val())
+									.replace(
+											"?",
+											$("#admin_fascicolo_callerId")
+													.val()));
+				}
+
+			});
+			$('#admin').validate();//]]>
+</script>

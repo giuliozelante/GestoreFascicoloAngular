@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://dati.estrattoconto.xsd.servizibe.equitaliaspa.it"
+	elementFormDefault="qualified"
+	targetNamespace="http://dati.estrattoconto.xsd.servizibe.equitaliaspa.it">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsd:complexType name="AnagraficaRichiestaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="InfoRichiesta"
+				type="tns:InfoRichiestaType">
+			</xsd:element>
+
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="CodiceFiscale"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Nome"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="0" name="Cognome"
+				type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="AnagraficaType">
+		<xsd:sequence>
+			<xsd:element name="CodiceFiscale" type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="0" name="Nome"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="0" name="Cognome"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="0" name="DataNascita"
+				type="xsd:date" />
+			<xsd:element maxOccurs="1" minOccurs="0" name="LuogoNascita"
+				type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="AnagraficaRispostaType">
+		<xsd:sequence>
+			<xsd:element name="EsitoOperazione" type="tns:EsitoOperazioneType">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="1" name="Anagrafica"
+				type="tns:AnagraficaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Suggested"
+				type="xsd:boolean">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Suggestion"
+				type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+
+
+	<xsd:complexType name="StatoRichiestaType">
+		<xsd:sequence>
+			<xsd:element name="CodiceFiscale" type="tns:CodiceFiscaleType">
+			</xsd:element>
+			<xsd:element name="IdentificativoDocumento" type="tns:IdentificativoDocumentoType">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="StatoRispostaType">
+		<xsd:sequence>
+			<xsd:element name="NumeroCartelle" type="xsd:integer" />
+			<xsd:element name="NumeroAvvisi" type="xsd:integer" />
+			<xsd:element name="NumeroProcedure" type="xsd:integer" />
+			<xsd:element name="NumeroProvvedimenti" type="xsd:integer" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="IdentificativoDocumentoType">
+
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="NumeroDocumento"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="TipoDocumento"
+				type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="CodiceFiscaleType">
+		<xsd:restriction base="xsd:string" />
+	</xsd:simpleType>
+
+
+
+	<xsd:complexType name="MetadataRichiestaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="InfoRichiesta"
+				type="tns:InfoRichiestaType">
+			</xsd:element>
+
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="CodiceFiscale"
+				type="tns:CodiceFiscaleType">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MetadataRispostaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="PresenzaDocumento"
+				type="tns:FlagPresenzaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="PresenzaTributo"
+				type="tns:FlagPresenzaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="PresenzaProcedura"
+				type="tns:FlagPresenzaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="PresenzaProvvedimento" type="tns:FlagPresenzaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="PresenzaPianoRateazione" type="tns:FlagPresenzaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="InfoServizio"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="0" name="Attributi"
+				type="tns:ProprietaType">
+			</xsd:element>
+
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DocumentoRichiestaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="InfoRichiesta"
+				type="tns:InfoRichiestaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceFiscale"
+				type="tns:CodiceFiscaleType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="DataInizio"
+				type="xsd:date">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="DataFine"
+				type="xsd:date">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="Tipologia">
+
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+
+
+						<xsd:enumeration value="A" />
+						<xsd:enumeration value="I" />
+						<xsd:enumeration value="S" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="TipoDocumento"
+				type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DocumentoRispostaType">
+		<xsd:sequence>
+
+			<xsd:element maxOccurs="1" minOccurs="1" name="EsitoOperazione"
+				type="tns:EsitoOperazioneType">
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="TotaleDaPagare"
+				type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="TotaleDaPagarePagina" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Documento"
+				type="tns:DocumentoType">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="TributoRichiestaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="InfoRichiesta"
+				type="tns:InfoRichiestaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdDocumento"
+				type="tns:IdentificativoDocumentoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceFiscale"
+				type="tns:CodiceFiscaleType">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="TributoRispostaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EsitoOperazione"
+				type="tns:EsitoOperazioneType">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Tributo"
+				type="tns:TributoType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+	<xsd:complexType name="PianoRateazioneRichiestaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="InfoRichiesta"
+				type="tns:InfoRichiestaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="IdDocumento"
+				type="tns:IdentificativoDocumentoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceFiscale"
+				type="tns:CodiceFiscaleType">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="PianoRateazioneRispostaType">
+		<xsd:sequence>
+			<xsd:element name="EsitoOperazione" type="tns:EsitoOperazioneType">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0"
+				name="PianoRateazione" type="tns:PianoRateazioneType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ProceduraRichiestaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="InfoRichiesta"
+				type="tns:InfoRichiestaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceFiscale"
+				type="tns:CodiceFiscaleType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="IdDocumento"
+				type="tns:IdentificativoDocumentoType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ProceduraRispostaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EsitoOperazione"
+				type="tns:EsitoOperazioneType">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Procedura"
+				type="tns:ProceduraType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ProvvedimentoRichiestaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="InfoRichiesta"
+				type="tns:InfoRichiestaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdDocumento"
+				type="tns:IdentificativoDocumentoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceFiscale"
+				type="tns:CodiceFiscaleType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ProvvedimentoRispostaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EsitoOperazione"
+				type="tns:EsitoOperazioneType">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0"
+				name="Provvedimento" type="tns:ProvvedimentoType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="FlagPresenzaType">
+		<xsd:annotation>
+			<xsd:documentation>
+				Flag di presenza. 0 , non presente -1, presente, ma
+				impossibile definire il numero -2, impossibile
+				determinare la presenza -3, operazione non implementata
+				&gt; 0 presente e numero indicato in modo preciso
+
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:int">
+			<xsd:minInclusive value="-1" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="ProprietaType">
+		<xsd:sequence>
+			<xsd:element name="Nome" type="xsd:string" />
+			<xsd:element name="Valore" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="IdRichiestaType">
+		<xsd:restriction base="xsd:string" />
+	</xsd:simpleType>
+
+	<xsd:simpleType name="IdAmbitoType">
+		<xsd:restriction base="xsd:string" />
+	</xsd:simpleType>
+
+	<xsd:simpleType name="CodiceEsitoType">
+		<xsd:restriction base="xsd:string" />
+	</xsd:simpleType>
+
+	<xsd:simpleType name="DescrizioneEsitoType">
+		<xsd:restriction base="xsd:string" />
+	</xsd:simpleType>
+
+	<xsd:complexType name="DocumentoType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdDocumento"
+				type="tns:IdentificativoDocumentoType">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="1" name="Ente"
+				type="tns:EnteType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="AnnoEmissione"
+				type="xsd:string" />
+
+
+			<xsd:element maxOccurs="1" minOccurs="1" name="StatoDocumento"
+				type="tns:StatoDocumentoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="DataNotifica"
+				type="xsd:date">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="NumeroRav"
+				type="tns:NumeroRavType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="SommarioTributi"
+				type="tns:FlagPresenzaType">
+				<xsd:annotation>
+					<xsd:documentation>
+						Fornisce un riepilogo sul numero di tributi
+						associati alla cartella.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoTotaleDocumento" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoPagatoDocumento" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoResiduoDocumento" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoInizialeTributi" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoPagatoTributi" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoResiduoTributi" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoTotaleNotifica" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoPagatoNotifica" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoResiduoNotifica" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoTotaleCompensi" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoPagatoCompensi" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoResiduoCompensi" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoInteressiMora" type="tns:ImportoType">
+			</xsd:element>
+
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ImportoAltreSpese"
+				type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoSpeseProcedure" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="FlagRateazione"
+				type="tns:FlagPresenzaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="FlagSgravio"
+				type="tns:FlagPresenzaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="FlagSospensione"
+				type="tns:FlagPresenzaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="FlagProcedura"
+				type="tns:FlagPresenzaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="CodiceEsitoDettaglio" type="tns:CodiceEsitoType">
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoTotaleSgravato" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoTotaleSospeso" type="tns:ImportoType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="EnteType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceEnte"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceUfficio"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="TipoUfficio"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="0" name="Descrizione"
+				type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="EnteConcedenteType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceEnte"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceUfficio"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="TipoUfficio"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="0" name="Descrizione"
+				type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="EsitoOperazioneType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceEsito"
+				type="tns:CodiceEsitoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="DescrizioneEsito"
+				type="tns:DescrizioneEsitoType" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="TotaleDocumenti"
+				type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="TotalePagine"
+				type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="DocumentiPaginaCorrente" type="xsd:int">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="NumeroPaginaCorrente" type="xsd:int" />
+
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="TipoDocumentoType">
+		<xsd:restriction base="xsd:string" />
+	</xsd:simpleType>
+
+	<xsd:simpleType name="StatoDocumentoType">
+		<xsd:restriction base="xsd:string" />
+	</xsd:simpleType>
+
+	<xsd:simpleType name="NumeroRavType">
+		<xsd:restriction base="xsd:string" />
+	</xsd:simpleType>
+
+	<xsd:simpleType name="ImportoType">
+		<xsd:restriction base="xsd:double">
+			<xsd:minInclusive value="0" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="TributoType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdDocumento"
+				type="tns:IdentificativoDocumentoType">
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceTributo"
+				type="tns:CodiceTributoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="DescrizioneTributo"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="DescrizioneTributoRuolo" type="xsd:string">
+			</xsd:element>
+
+
+			<xsd:element maxOccurs="1" minOccurs="1" name="ProgressivoTributo"
+				type="xsd:int">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="AnnoPartita"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="NumeroPartita"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="NumeroRuolo"
+				type="xsd:string">
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="1" name="AnnoTributo"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="Ente"
+				type="tns:EnteType">
+			</xsd:element>
+
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="ImportoIniziale"
+				type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ImportoPagato"
+				type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ImportoInteressiMR"
+				type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ImportoSgravato"
+				type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoResiduoTotale" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ImportoSospeso"
+				type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="ImportoResiduoCorrente" type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="Rateizzabile"
+				type="tns:FlagPresenzaType">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="CodiceTributoType">
+		<xsd:restriction base="xsd:string" />
+	</xsd:simpleType>
+
+	<xsd:complexType name="ProvvedimentoType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceFiscale"
+				type="tns:CodiceFiscaleType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="AnnoPartita"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="NumeroPartita"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="TipoProvvedimento"
+				type="tns:TipoProvvedimentoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="DescrizioneProvvedimento" type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="DataEmissione"
+				type="xsd:date" />
+			<xsd:element maxOccurs="1" minOccurs="0"
+				name="NumeroProvvedimentoEnte" type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="AnnoProvvedimento"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="NumeroRuolo"
+				type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="PianoRateazioneType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceFiscale"
+				type="tns:CodiceFiscaleType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="DataApprovazione"
+				type="xsd:string">
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="1" name="EnteConcedente"
+				type="tns:EnteType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="StatoPiano"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Rata"
+				type="tns:RataType">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="1"
+				name="DocumentoAssociato" type="tns:IdentificativoDocumentoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Protocollo"
+				type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="RataType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="0" name="DataScadenza"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="ImportoRata"
+				type="tns:ImportoType" />
+			<xsd:element maxOccurs="1" minOccurs="0" name="NumeroRav"
+				type="tns:NumeroRavType" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="StatoRata"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="ProgressivoRata"
+				type="xsd:int" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ProceduraType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceFiscale"
+				type="tns:CodiceFiscaleType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdProcedura"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="AnnoProcedura"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="TipoProcedura"
+				type="tns:TipoProceduraType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="DescrizioneProcedura" type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="DataApertura"
+				type="xsd:date" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="DataChiusura"
+				type="xsd:date" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="StatoProcedura"
+				type="xsd:string" />
+			<xsd:element maxOccurs="unbounded" minOccurs="1"
+				name="DocumentoAssociato" type="tns:IdentificativoDocumentoType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+	<xsd:complexType name="InfoRichiestaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdRichiesta"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdAmbito"
+				type="tns:IdAmbitoType" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="NumeroPagina"
+				type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="ElementiPagina"
+				type="xsd:int" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="DataRichiesta"
+				type="xsd:date" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="TipoRichiesta"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="Richiedente"
+				type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="AnagraficaRichiesta" type="tns:AnagraficaRichiestaType">
+	</xsd:element>
+
+	<xsd:element name="AnagraficaRisposta" type="tns:AnagraficaRispostaType">
+	</xsd:element>
+
+	<xsd:element name="MetadataRichiesta" type="tns:MetadataRichiestaType">
+	</xsd:element>
+
+	<xsd:element name="MetadataRisposta" type="tns:MetadataRispostaType">
+	</xsd:element>
+
+	<xsd:element name="DocumentoRichiesta" type="tns:DocumentoRichiestaType">
+	</xsd:element>
+
+	<xsd:element name="DocumentoRisposta" type="tns:DocumentoRispostaType">
+	</xsd:element>
+
+	<xsd:element name="TributoRichiesta" type="tns:TributoRichiestaType">
+	</xsd:element>
+
+	<xsd:element name="TributoRisposta" type="tns:TributoRispostaType">
+	</xsd:element>
+
+
+	<xsd:element name="PianoRateazioneRichiesta" type="tns:PianoRateazioneRichiestaType">
+	</xsd:element>
+
+	<xsd:element name="PianoRateazioneRisposta" type="tns:PianoRateazioneRispostaType">
+	</xsd:element>
+
+
+	<xsd:element name="ProceduraRichiesta" type="tns:ProceduraRichiestaType">
+	</xsd:element>
+
+	<xsd:element name="ProceduraRisposta" type="tns:ProceduraRispostaType">
+	</xsd:element>
+
+	<xsd:element name="ProvvedimentoRichiesta" type="tns:ProvvedimentoRichiestaType">
+	</xsd:element>
+
+	<xsd:element name="ProvvedimentoRisposta" type="tns:ProvvedimentoRispostaType">
+	</xsd:element>
+
+	<xsd:complexType name="TipoProceduraType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="CodiceTipoProcedura" type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="DescrizioneTipoProcedura" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="TipoProvvedimentoType">
+		<xsd:sequence>
+			<xsd:element name="CodiceTipoProvvedimento" type="xsd:string">
+			</xsd:element>
+			<xsd:element name="DescrizioneTipoProvvedimento" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CarrelloRavRichiestaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CodiceFiscale"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="InfoRichiesta"
+				type="tns:InfoRichiestaType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="TotaleInPagamento"
+				type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="DataCalcoloDebito"
+				type="xsd:date">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Documento"
+				type="tns:DocumentoType">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CarrelloRavRispostaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EsitoOperazione"
+				type="tns:EsitoOperazioneType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="NumeroRav"
+				type="xsd:string" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="ImportoDaPagare"
+				type="tns:ImportoType">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="DataScadenzaRav"
+				type="xsd:date" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="CarrelloRavRichiesta" type="tns:CarrelloRavRichiestaType">
+	</xsd:element>
+
+	<xsd:element name="CarrelloRavRisposta" type="tns:CarrelloRavRispostaType">
+	</xsd:element>
+</xsd:schema>

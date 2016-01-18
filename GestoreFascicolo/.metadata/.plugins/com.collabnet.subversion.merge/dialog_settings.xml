@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="500" key="MergeWizardRevisionsPageWeightsHorizontal0"/>
+	<item value="500" key="MergeWizardRevisionsPageWeightsHorizontal1"/>
+	<item value="false" key="MergeWizardStandardPage.selectRevisions"/>
+	<item value="Merge a &amp;range of revisions" key="MergeWizardMainPage.lastInputProvider"/>
+	<item value="/Sorgenti/WAS/WebApp/GestoreFascicolo/Branches/1.0.0/GestoreFascicolo,/Sorgenti/WAS/WebApp/GestoreFascicolo/Branches/1.0.0/GestoreFascicolo" key="mergeFromUrls_https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk/GestoreFascicolo"/>
+	<item value="333" key="MergeWizardRevisionsPageWeights0"/>
+	<item value="/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk/GestoreFascicolo,/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk/GestoreFascicolo" key="mergeFromUrls_https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Branches/1.0.0/GestoreFascicolo"/>
+	<item value="333" key="MergeWizardRevisionsPageWeights1"/>
+	<item value="333" key="MergeWizardRevisionsPageWeights2"/>
+</section>

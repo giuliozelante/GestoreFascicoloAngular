@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="419" key="RevertDialog.location.x"/>
+	<item value="101" key="HistoryTableProvider.revisions.Revision"/>
+	<item value="76" key="RevertDialog.location.y"/>
+	<item value="252" key="HistoryTableProvider.revisions.Date"/>
+	<item value="340" key="BranchTagPropertyUpdateDialog.location.x"/>
+	<item value="76" key="BranchTag.location.y"/>
+	<item value="395" key="BranchTag.location.x"/>
+	<item value="101" key="HistoryTableProvider.revisionsBlock.Revision"/>
+	<item value="528" key="RevertDialog.size.x"/>
+	<item value="433" key="RevertDialog.size.y"/>
+	<item value="606" key="SwitchDialogWithConflictHandling2.size.x"/>
+	<item value="100" key="HistoryTableProvider.SVNHistoryPage.Date"/>
+	<item value="728" key="SwitchDialogWithConflictHandling2.size.y"/>
+	<item value="58" key="BranchTagPropertyUpdateDialog.location.y"/>
+	<item value="https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Tags/2.1.14" key="UrlCombo.GestoreFascicoloEAR.1"/>
+	<item value="505" key="HistoryTableProvider.MergeWizardUnblockRevisionsPage.Comment"/>
+	<item value="201" key="HistoryTableProvider.revisions.Author"/>
+	<item value="500" key="CommitDialog.weights.0"/>
+	<item value="370" key="ResolveTreeConflict.location.x"/>
+	<item value="500" key="CommitDialog.weights.1"/>
+	<item value="497" key="ChooseUrlDialog.size.x"/>
+	<item value="370" key="ChooseUrlDialog.size.y"/>
+	<item value="0" key="ResolveTreeConflict.location.y"/>
+	<item value="433" key="BranchTag.size.y"/>
+	<item value="605" key="ShowDifferencesAsUnifiedDiffDialogWC.size.x"/>
+	<item value="0" key="SwitchDialogWithConflictHandling2.location.y"/>
+	<item value="410" key="MarkResolvedDialog.location.x"/>
+	<item value="380" key="SwitchDialogWithConflictHandling2.location.x"/>
+	<item value="336" key="ShowDifferencesAsUnifiedDiffDialogWC.size.y"/>
+	<item value="76" key="MarkResolvedDialog.location.y"/>
+	<item value="576" key="BranchTag.size.x"/>
+	<item value="252" key="HistoryTableProvider.MergeWizardUnblockRevisionsPage.Date"/>
+	<item value="24" key="CommitDialog.location.y"/>
+	<item value="102" key="CommitDialog.location.x"/>
+	<item value="0" key="passwordStores.location.y"/>
+	<item value="" key="DirectorySelectionPage.lastParent_https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk/GestoreFascicolo"/>
+	<item value="0" key="passwordStores.location.x"/>
+	<item value="https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Tags/2.1.22" key="UrlCombo.Resources.1"/>
+	<item value="546" key="MarkResolvedDialog.size.x"/>
+	<item value="https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Tags/2.1.22/Resources" key="UrlCombo.Resources.0"/>
+	<item value="433" key="MarkResolvedDialog.size.y"/>
+	<item value="https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Branches/1.0.0/GestoreFascicolo/WebContent/js/main.js" key="UrlCombo.GestoreFascicolo.4"/>
+	<item value="https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk" key="RepositorySelectionPage.lastRepository"/>
+	<item value="https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk/GestoreFascicolo" key="UrlCombo.GestoreFascicolo.3"/>
+	<item value="true" key="BranchTagDialog.makeParents"/>
+	<item value="https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/2.1.22" key="UrlCombo.GestoreFascicolo.2"/>
+	<item value="https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Tags/2.1.22" key="UrlCombo.GestoreFascicolo.1"/>
+	<item value="https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Branches/Gradle/1.0.0/GestoreFascicolo" key="UrlCombo.GestoreFascicolo.0"/>
+	<item value="381" key="ShowDifferencesAsUnifiedDiffDialogWC.location.x"/>
+	<item value="586" key="passwordStores.size.y"/>
+	<item value="38" key="HistoryTableProvider.SVNHistoryPage.Tags"/>
+	<item value="1366" key="passwordStores.size.x"/>
+	<item value="140" key="ShowDifferencesAsUnifiedDiffDialogWC.location.y"/>
+	<item value="606" key="SwitchDialogWithConflictHandling.multiple.size.x"/>
+	<item value="728" key="SwitchDialogWithConflictHandling.multiple.size.y"/>
+	<item value="201" key="HistoryTableProvider.revisionsBlock.Author"/>
+	<item value="520" key="SetSvnPropertyDialog.size.y"/>
+	<item value="3" key="ResolveConflictDialog.lastChoice"/>
+	<item value="525" key="SetSvnPropertyDialog.size.x"/>
+	<item value="435" key="ChooseUrlDialog.location.x"/>
+	<item value="2" key="ChooseUrlDialog.location.y"/>
+	<item value="63" key="HistoryTableProvider.SVNHistoryPage.Comment"/>
+	<item value="102" key="HistoryTableProvider.MergeWizardUnblockRevisionsPage.Revision"/>
+	<item value="43" key="HistoryTableProvider.SVNHistoryPage.Revision"/>
+	<item value="18" key="SetSvnPropertyDialog.location.y"/>
+	<item value="627" key="ResolveTreeConflict.size.x"/>
+	<item value="583" key="ResolveTreeConflict.size.y"/>
+	<item value="74" key="HistoryTableProvider.SVNHistoryPage.Author"/>
+	<item value="202" key="HistoryTableProvider.MergeWizardUnblockRevisionsPage.Author"/>
+	<item value="https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Tags/2.1.21" key="UrlCombo.GestoreFascicoloEAR.0"/>
+	<item value="421" key="SetSvnPropertyDialog.location.x"/>
+	<item value="728" key="SwitchDialogWithConflictHandling.size.y"/>
+	<item value="606" key="SwitchDialogWithConflictHandling.size.x"/>
+	<item value="380" key="SwitchDialogWithConflictHandling.location.x"/>
+	<item value="0" key="SwitchDialogWithConflictHandling.location.y"/>
+	<item value="252" key="HistoryTableProvider.revisionsBlock.Date"/>
+	<item value="0" key="SwitchDialogWithConflictHandling.multiple.location.y"/>
+	<item value="686" key="BranchTagPropertyUpdateDialog.size.x"/>
+	<item value="380" key="SwitchDialogWithConflictHandling.multiple.location.x"/>
+	<item value="352" key="BranchTagPropertyUpdateDialog.size.y"/>
+	<item value="503" key="HistoryTableProvider.revisions.Comment"/>
+	<item value="1163" key="CommitDialog.size.x"/>
+	<item value="503" key="HistoryTableProvider.revisionsBlock.Comment"/>
+	<item value="511" key="CommitDialog.size.y"/>
+	<item value="" key="DirectorySelectionPage.lastParent_https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk"/>
+	<section name="CommitWizard">
+		<item value="true" key="ShowCompare"/>
+		<item value="500" key="VWeight2"/>
+		<item value="650" key="HWeight2"/>
+		<item value="500" key="VWeight1"/>
+		<item value="350" key="HWeight1"/>
+	</section>
+	<section name="NewLocationWizard">
+		<list key="ConfigurationWizardMainPage.STORE_URL_ID">
+			<item value="https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk/"/>
+			<item value="https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk/GestoreFascicolo/"/>
+			<item value=""/>
+		</list>
+	</section>
+</section>

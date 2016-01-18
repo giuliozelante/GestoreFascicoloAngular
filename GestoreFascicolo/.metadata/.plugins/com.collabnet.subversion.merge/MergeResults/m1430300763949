@@ -1,0 +1,27 @@
+:normalEnd:
+project: \GestoreFascicolo
+fromUrl: https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk/GestoreFascicolo
+toUrl: https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk/GestoreFascicolo
+force: false
+recurse: false
+ignore: false
+depth: 0
+Summary result: type: 0 category: Updated number: 5
+Summary result: type: 1 category: Merged number: 1
+Summary result: type: 1 category: Updated number: 1
+Summary result: type: 0 category: Conflicts number: 1
+Summary result: type: 2 category: Tree conflicts number: 1
+
+workspaceUrl: https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Branches/1.0.0/GestoreFascicolo
+workspaceRevision: 2434
+lowerRevision: 2398
+upperRevision: 2434
+merge https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk/GestoreFascicolo C:/lavoro/GestoreFascicolo/GestoreFascicolo
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/src/it/equitalia/gestorefascicolo/web/action/FascicoloAction.java
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/tiles/baseLayout.jsp
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/pages/anagraficaFascicolo/script.jsp
+Error:   1 C           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/pages/anagraficaFascicolo/dettaglioCartella/dettaglioCartella.jsp
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/pages/anagraficaFascicolo/dettaglioFascicolo.jsp
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/pages/home/ricercaFascicolo.jsp
+Error:   1         C   C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/js/main.js
+Message: 3   U         C:/lavoro/GestoreFascicolo/GestoreFascicolo

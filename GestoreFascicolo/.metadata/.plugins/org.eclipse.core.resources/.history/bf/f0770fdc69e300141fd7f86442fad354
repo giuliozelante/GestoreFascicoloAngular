@@ -1,0 +1,356 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="uf" uri="/WEB-INF/tld/util-functions.tld" %>
+<fmt:setLocale value="it_IT" />
+<!-- inizio aggiunta per pulsante Relate-->
+<div id="dialog-confirm-relate" style="display:none" title-holder="Documento n&deg;">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Relate aggiornate al <span id="dataRelate"></span> </p>
+</div>
+<!-- fine aggiunta per pulsante Relate-->
+<s:iterator value="documenti.fascicolo.documenti" status="documentiStatus">
+  <s:iterator value="dataValues" status="dataValuesStatus">
+    <s:if test="%{#dataValuesStatus.even==true}">
+      <s:if test="%{renderingType>=32}">
+        <div id="pop${documentiStatus.index}${dataValuesStatus.index}" class="popup">
+          <div class="popup-body"> <span class="popup-exit"></span>
+            <div class="popup-content">
+              <table>
+                <tr>
+                  <th>
+                    <s:if test="%{dataTypeId==9||dataTypeId==5}">Dettaglio <s:property value='%{dataTypeDescr.replace("<br />", "")}' /> </s:if>
+                  </th>
+                  <td>Totale iniziale:
+                    <fmt:formatNumber value="${value}" type="currency" /> </td>
+                </tr>
+              </table>
+              <br style="clear:both" />
+              <table>
+                <tr>
+                  <s:iterator value="detailDataValues" status="dataValuesStatus">
+                    <th>${dataTypeDescr}</th>
+                  </s:iterator>
+                </tr>
+                <tr>
+                  <s:iterator value="detailDataValues" status="dataValuesStatus">
+                    <td><span class="${valueCssClass}"><fmt:formatNumber value="${value}" type="currency"/></span> </td>
+                  </s:iterator>
+                </tr>
+              </table>
+              <br /> <span style="font-size:10pt; color:#0046ad; text-decoration:none; font-family: Trebuchet ms,Arial,sans-serif;"></span> </div>
+          </div>
+        </div>
+        <div class="popup-overlay${documentiStatus.index}${dataValuesStatus.index}"></div>
+      </s:if>
+    </s:if>
+    <s:else>
+      <s:if test="%{renderingType>=32}">
+        <div id="pop${documentiStatus.index}${dataValuesStatus.index}" class="popup">
+          <div class="popup-body"> <span class="popup-exit"></span>
+            <div class="popup-content">
+              <table>
+                <tr>
+                  <th>
+                    <s:if test="%{dataTypeId==9||dataTypeId==5}"> Dettaglio <s:property value='%{dataTypeDescr.replace("<br />", "")}' /> </s:if>
+                  </th>
+                  <td>Totale iniziale:
+                    <fmt:formatNumber value="${value}" type="currency" /> </td>
+                </tr>
+              </table>
+              <br style="clear:both" />
+              <table>
+                <tr>
+                  <s:iterator value="detailDataValues" status="dataValuesStatus">
+                    <th>${dataTypeDescr}</th>
+                  </s:iterator>
+                </tr>
+                <tr>
+                  <s:iterator value="detailDataValues" status="dataValuesStatus">
+                    <td><span class="${valueCssClass}"><fmt:formatNumber value="${value}" type="currency"/></span> </td>
+                  </s:iterator>
+                </tr>
+              </table>
+              <br /> <span style="font-size:10pt; color:#0046ad; text-decoration:none; font-family: Trebuchet ms,Arial,sans-serif;"></span> </div>
+          </div>
+        </div>
+        <div class="popup-overlay${documentiStatus.index}${dataValuesStatus.index}"></div>
+      </s:if>
+    </s:else>
+  </s:iterator>
+</s:iterator>
+<fieldset class="datiAnagrafici">
+  <legend>
+    <h3>Dati Anagrafici</h3> </legend>
+  <div style="float:left;width:50%">
+    <ul>
+      <li>
+        <s:if test='%{fascicolo.anagrafica.naturaGiuridica.equals("F")}'>
+          <label for="fascicolo.anagrafica.codiceFiscale">Codice Fiscale</label> <s:textfield readonly="true" name="fascicolo.anagrafica.codiceFiscale" size="18" /> </s:if>
+        <s:else>
+          <label for="fascicolo.anagrafica.codiceFiscale">Partita IVA</label> <s:textfield readonly="true" name="fascicolo.anagrafica.codiceFiscale" size="13" /> </s:else>
+      </li>
+    </ul>
+  </div>
+  <div style="float:left;width:50%">
+    <ul>
+      <li>
+        <s:if test='%{fascicolo.anagrafica.naturaGiuridica.equals("F")}'>
+          <label for="nomeCognome">Nome e Cognome</label>
+          <input type="text" name="nomeCognome" id="nomeCognome" value='${fascicolo.anagrafica.nome} ${fascicolo.anagrafica.cognome}' readonly="readonly" size="60" /> </s:if>
+        <s:else>
+          <label for="ragioneSociale">Denominazione</label> <s:textfield readonly="true" name="fascicolo.anagrafica.ragioneSociale" size="60" /> </s:else>
+      </li>
+    </ul>
+  </div>
+</fieldset>
+<div class="showBeforeLoad"> </div>
+<!-- ric-2015-03-26 -->
+<div class="showAfterLoad">
+  <!-- ric-2015-03-26 -->
+  <c:if test="${ not empty  documenti.fascicolo.documenti}">
+    <c:set value="${ uf:getDistinctTipoModello(documenti.fascicolo.documenti) }" var="listaTipiModello" />
+    <c:set var="indiceDocumento" value="${ 0 }" />
+    <!-- ciclo i tipi modello -->
+    <c:forEach items="${listaTipiModello}" var="tipoModello">
+      <c:set value="${ uf:getDocumentiEsattorialiPerTipoModello(documenti.fascicolo.documenti, tipoModello) }" var="docs" />
+      <c:set value="${ docs[0] }" var="primoDoc" />
+      <fieldset class="detail">
+        <legend>
+          <div class="arrow" style="background-position:0 0;"></div><span><strong>${tipoModello}</strong></span> </legend>
+        <table class="dataTable compact">
+          <thead>
+            <tr>
+              <c:forEach var="dataValue" items="${ primoDoc.dataValues }">
+                <c:if test="${uf:hasRenderingTypeVisibleDocumentoEsattoriale(dataValue) }">
+                  <th scope="col" style="text-align:center;">
+                    <c:choose>
+                      <c:when test="${uf:hasDataTypeDescrVisibleDocumentoEsattoriale(dataValue) }"> ${ dataValue.dataTypeDescr } </c:when>
+                      <c:otherwise> &nbsp; </c:otherwise>
+                    </c:choose>
+                  </th>
+                </c:if>
+              </c:forEach>
+            </tr>
+          </thead>
+          <tbody>
+            <c:set var="indiceRiga" value="${ 0 }" />
+            <!-- ciclo i documenti esattoriali per un dato tipo modello -->
+            <c:forEach var="doc" items="${docs}">
+              <c:choose>
+                <c:when test="${indiceRiga%2 == 0}">
+                  <c:set var="cssClass" value="odd" /> </c:when>
+                <c:otherwise>
+                  <c:set var="cssClass" value="even" /> </c:otherwise>
+              </c:choose>
+              <tr class="${cssClass}">
+                <c:forEach var="dataValue" items="${doc.dataValues }">
+                  <c:if test="${uf:hasRenderingTypeVisibleDocumentoEsattoriale(dataValue)  }">
+                    <c:if test="${ dataValue.dataTypeId == 215}">
+                      <c:set var="numDoc" value="${ dataValue.value }" /> </c:if>
+                    <c:choose>
+                      <c:when test="${ dataValue.dataTypeId == 292}">
+                        <!-- pulsante PDF -->
+                        <td class="buttons" style="text-align:center;">
+                          <c:if test="${ documenti.fascicolo.statoFascicoloId!=fascicoloChiuso || dataValue.value=='DI' }">
+                            <c:choose>
+                              <c:when test="${dataValue.value=='NR'}">
+                                <s:set var="title"><s:text name="link.title.pdf.richiedi" /></s:set>
+                              </c:when>
+                              <c:when test="${dataValue.value=='RI'}">
+                                <s:set var="title"><s:text name="link.title.pdf.richiesto" /></s:set>
+                              </c:when>
+                              <c:when test="${dataValue.value=='DI'}">
+                                <s:set var="title"><s:text name="link.title.pdf.disponibile" /></s:set>
+                              </c:when>
+                              <c:when test="${dataValue.value=='ND'}">
+                                <s:set var="title"><s:text name="link.title.pdf.nondisponibile" /></s:set>
+                              </c:when>
+                            </c:choose>
+                            <a href="javascript:void(0)" onclick="getPdfDocumento(this,'${documenti.fascicolo.callerId}','${documenti.fascicolo.fascicoloId}','${numDoc}','${documenti.fascicolo.anagrafica.codiceFiscale}','')" title="${title}">
+                              <div class="statoPdf ${dataValue.value}">&nbsp;</div>
+                            </a>
+                          </c:if> &nbsp; </td>
+                      </c:when>
+                      <c:when test="${ dataValue.dataTypeId == 293}">
+                        <!-- pulsante Relate-->
+                        <td class="buttons" style="text-align:center;">
+                          <c:if test="${ documenti.fascicolo.statoFascicoloId!=fascicoloChiuso || dataValue.value=='DI' }">
+                            <c:choose>
+                              <c:when test="${dataValue.value=='NR'}">
+                                <s:set var="title"> <s:text name="link.title.relate.richiedi" /> </s:set>
+                              </c:when>
+                              <c:when test="${dataValue.value=='RI'}">
+                                <s:set var="title"> <s:text name="link.title.relate.richiesto" /> </s:set>
+                              </c:when>
+                              <c:when test="${dataValue.value=='DI'}">
+                                <s:set var="title"> <s:text name="link.title.relate.disponibile" /> </s:set>
+                              </c:when>
+                              <c:when test="${dataValue.value=='ND'}">
+                                <s:set var="title"> <s:text name="link.title.relate.nondisponibile" /> </s:set>
+                              </c:when>
+                            </c:choose>
+                            <a href="javascript:void(0)" onclick="getRelate(this,'${documenti.fascicolo.callerId}','${documenti.fascicolo.fascicoloId}','${numDoc}','${documenti.fascicolo.anagrafica.codiceFiscale}','dataRelate${indiceDocumento}','statoRelate${indiceDocumento}')" title="${title}">
+                              <div class="statoRelate ${dataValue.value}">&nbsp;</div>
+                            </a>
+                            <input type="hidden" id="statoRelate${indiceDocumento}" value="${dataValue.value}" /> </c:if> &nbsp; </td>
+                      </c:when>
+                      <%-- <c:when test="${ dataValue.dataTypeId == 294 }">
+                        <!-- data per pulsante Relate-->
+                        <fmt:parseDate value="${ dataValue.value }" var="dataTemp" pattern="yyyy-MM-dd" />
+                        <fmt:parseDate value="${ dataTemp }" var="dataTemp" pattern="dd/MM/yyyy" />
+                        <input type="hidden" id="dataRelate${indiceDocumento}" value="${dataTemp}" /> </c:when> --%>
+                        <c:otherwise>
+                          <!-- dato da visualizzare -->
+                          <td style="text-align:center;">
+                            <c:choose>
+                              <c:when test="${uf:isValueValuta(dataValue.renderingType)  }">
+                                <fmt:formatNumber value="${dataValue.value}" type="currency" /> </c:when>
+                              <c:otherwise> ${ dataValue.value } </c:otherwise>
+                            </c:choose>
+                          </td>
+                        </c:otherwise>
+                    </c:choose>
+                  </c:if>
+                </c:forEach>
+              </tr>
+              <c:set var="indiceRiga" value="${ indiceRiga + 1 }" />
+              <c:set var="indiceDocumento" value="${ indiceDocumento + 1 }" /> </c:forEach>
+          </tbody>
+        </table>
+      </fieldset>
+    </c:forEach>
+  </c:if>
+  <!-- inizio aggiunta per pulsante Relate-->
+  <!-- data per pulsante Relate-->
+  <c:set var="indiceDocumento" value="${ 0 }" />
+  <c:forEach items="${listaTipiModello}" var="tipoModello">
+    <c:set value="${ uf:getDocumentiEsattorialiPerTipoModello(documenti.fascicolo.documenti, tipoModello) }" var="docs" />
+    <c:forEach var="doc" items="${docs}">
+      <!-- ciclo i valori-->
+      <c:forEach var="dataValue" items="${doc.dataValues }">
+        <c:if test="${ dataValue.dataTypeId == 294  }">
+          <fmt:parseDate value="${ dataValue.value }" var="dataTemp" pattern="yyyy-MM-dd" />
+          <fmt:formatDate value="${ dataTemp }" var="dataTemp" pattern="dd/MM/yyyy" />
+          <input type="hidden" id="dataRelate${indiceDocumento}" value="${dataTemp}" /> </c:if>
+      </c:forEach>
+      <c:set var="indiceDocumento" value="${ 1 + indiceDocumento }" /> </c:forEach>
+  </c:forEach>
+  <!-- fine aggiunta per pulsante Relate-->
+</div>
+<!-- ########## TABLE TO EXPORT #################### -->
+<div class="export" style="display: none">
+  <table id="datiFascicolo">
+    <caption>Dati Fascicolo</caption>
+    <tr>
+      <th scope="row">Fascicolo:</th>
+      <td>${fascicolo.fascicoloId}</td>
+      <th scope="row">Applicazione di riferimento:</th>
+      <td>${fascicolo.callerId}</td>
+    </tr>
+    <tr>
+      <th scope="row">Aperto il:</th>
+      <td><s:date name="new java.text.SimpleDateFormat('yyyy-MM-dd').parse(fascicolo.dataApertura)" format="dd/MM/yyyy" />
+      </td>
+      <s:if test='%{fascicolo.statoFascicoloId==90}'>
+        <th scope="row">e Chiuso il:</th>
+        <td><s:date name="new java.text.SimpleDateFormat('yyyy-MM-dd').parse(fascicolo.dataChiusura)" format="dd/MM/yyyy" />
+        </td>
+      </s:if>
+      <s:else>
+        <th scope="row"></th>
+        <td></td>
+      </s:else>
+    </tr>
+    <tr>
+      <th scope="row">Stato:</th>
+      <td>${fascicolo.statoFascicoloDescr}</td>
+      <th scope="row"></th>
+      <td></td>
+    </tr>
+  </table>
+  <table id="datiAnagrafici">
+    <caption>Dati Anagrafici</caption>
+    <tr id="soggetto">
+      <th scope="row">
+        <s:if test='%{fascicolo.anagrafica.naturaGiuridica.equals("F")}'>Codice Fiscale</s:if>
+        <s:else>Partita IVA</s:else>
+      </th>
+      <td>${fascicolo.anagrafica.codiceFiscale}</td>
+      <s:if test='%{fascicolo.anagrafica.naturaGiuridica.equals("F")}'>
+        <th scope="row">Nome e Cognome</th>
+        <td>${fascicolo.anagrafica.nome}${fascicolo.anagrafica.cognome}</td>
+      </s:if>
+      <s:else>
+        <th scope="row">Denominazione</th>
+        <td>${fascicolo.anagrafica.ragioneSociale}</td>
+      </s:else>
+    </tr>
+  </table>
+  <s:iterator value="documenti.fascicolo.documenti" var="documenti" status="documentiStatus">
+    <s:if test='%{#documenti.renderingType!=0}'>
+      <s:iterator value="dataValues" status="dataValuesStatus1">
+        <!--change: <s:property value="%{#change}" /> -->
+        <!-- renderingType: ${renderingType} -->
+        <s:if test='%{#documentiStatus.first||#change.equals("true")}'>
+          <s:if test="%{(#documentiStatus.first==true&&#dataValuesStatus1.first==true)||(#documentiStatus.first==false&&#dataValuesStatus1.first==true&&!#tipoDoc.equals(value))}">
+            <table class="item">
+              <s:if test='%{#documenti.renderingType==2||#documenti.renderingType==1}'>
+                <caption>${value}</caption>
+              </s:if>
+              <tr> <s:set var="th" value="%{true}" /> </s:if>
+        </s:if>
+        <!--th: <s:property value="%{#th}" /> -->
+        <!--dataValuesStatus1.index: <s:property value="%{#dataValuesStatus1.index}" /> -->
+        <s:if test='%{(renderingType!=0&&!#dataValuesStatus1.first)&&#th}'>
+          <th class="renderingType${renderingType}" renderingType="${renderingType}">${dataTypeDescr}</th>
+        </s:if>
+        <s:if test="%{#dataValuesStatus1.last&&#th}">
+          </tr>
+        </s:if>
+        <s:elseif test="%{#dataValuesStatus1.last&&!#th}">
+          </tr>
+        </s:elseif>
+        <s:if test="%{dataTypeId==210}">
+          <s:set var="tipoDoc">${value}</s:set>
+        </s:if>
+        <s:if test="%{dataTypeId==215}">
+          <s:set var="numDoc">${value}</s:set>
+        </s:if>
+        <s:if test="%{!#documentiStatus.last&&#dataValuesStatus1.last&&!#tipoDoc.equals(documenti.fascicolo.documenti[#documentiStatus.count].dataValues[0].value)}">
+          <s:set var="change">true</s:set>
+        </s:if>
+        <s:else>
+          <s:set var="change">false</s:set>
+        </s:else>
+      </s:iterator> <s:set var="th" value="%{false}" />
+      <tr<s:if test="%{#documentiStatus.odd}"> class="odd"</s:if>
+    <s:else> class="even"</s:else>>
+    <s:iterator value="dataValues" status="dataValuesStatus2">
+      <!--dataValuesStatus2.index: <s:property value="%{#dataValuesStatus2.index}" /> -->
+      <s:if test="%{#dataValuesStatus2.index!=0}">
+        <s:if test="%{renderingType!=0}">
+          <td class="renderingType${renderingType}" renderingType="${renderingType}">
+            <s:if test="%{renderingType==4}">
+              <fmt:formatNumber value="${value}" type="currency" currencyCode="EUR" /></s:if>
+            <s:else>${value}</s:else>
+          </td>
+        </s:if>
+      </s:if>
+      <s:if test="%{dataTypeId==210}">
+        <s:set var="tipoDoc">${value}</s:set>
+      </s:if>
+    </s:iterator>
+    <s:if test='%{#documentiStatus.last||(!#documentiStatus.last&&!#tipoDoc.equals(documenti.fascicolo.documenti[#documentiStatus.count].dataValues[0].value))}'>
+      <s:set var="change">true</s:set>
+      <s:if test='%{#documenti.renderingType==2}'>
+        </table>
+      </s:if>
+    </s:if>
+    <s:elseif test="%{#dataValues.last}">
+      <s:set var="change">false</s:set>
+      <tr>
+    </s:elseif>
+    </s:if>
+  </s:iterator>
+</div>

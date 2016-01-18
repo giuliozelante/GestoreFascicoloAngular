@@ -1,0 +1,56 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:if test="${ AdminPanel_apertura == true or AdminPanel_chiusura == true }">
+  <s:form action="Fascicolo" method="post" namespace="/admin" id="admin">
+    <div id="adminPanel">
+      <input type="hidden" name="other-params" id="other-params" value="xpar-FSCidFascicolo=?,xpar-FSCidChiamante=?" /> <s:token />
+      <ul>
+        <%-- <li>
+          <label for="cf-user">CF User:</label>
+          <input type="text" name="cf-user" id="cf-user" />
+          </li> --%>
+          <c:if test="${ AdminPanel_apertura == true  }">
+            <li>
+              <label for="admin_fascicolo_anagrafica_codiceFiscale">Codice Fiscale:</label><input type="text" name="fascicolo.anagrafica.codiceFiscale" maxlength="16" value="" id="admin_fascicolo_anagrafica_codiceFiscale" minlength="11" required>
+            </li>
+          </c:if>
+          <li>
+            <label for="admin_fascicolo_fascicoloId">ID Fascicolo:</label><input type="text" name="fascicolo.fascicoloId" value="" id="admin_fascicolo_fascicoloId" required>
+          </li>
+          <li>
+            <label for="admin_fascicolo_callerId">ID Chiamante:</label><input type="text" name="fascicolo.callerId" value="" id="admin_fascicolo_callerId" required>
+          </li>
+          <li class="center">
+            <c:choose>
+              <c:when test="${ AdminPanel_apertura == true  }">
+                <s:submit type="button" id="apriFascicolo" cssClass="submit" value="Apri" action="apriFascicolo" />
+              </c:when>
+              <c:otherwise>
+                <s:submit type="button" id="chiudiFascicolo" cssClass="submit" value="Chiudi" action="chiudiFascicolo" />
+              </c:otherwise>
+            </c:choose>
+          </li>
+      </ul>
+      <div id="result" style="display:none">
+        <p id="codiceEsito">&nbsp;</p>
+        <p id="descrizioneEsito">&nbsp;</p>
+      </div>
+    </div>
+  </s:form>
+</c:if>
+<div class="info message" style="display:none">
+  <h3>&nbsp;</h3>
+  <p>&nbsp;</p>
+</div>
+<div class="warning message" style="display:none">
+  <h3>&nbsp;</h3>
+  <p>&nbsp;</p>
+</div>
+<div class="success message" style="display:none">
+  <h3>&nbsp;</h3>
+  <p> <s:actionmessage />&nbsp; </p>
+</div>
+<div class="error message" style="display:none">
+  <h3>&nbsp;</h3>
+  <p> <s:actionerror />&nbsp; </p>
+</div>

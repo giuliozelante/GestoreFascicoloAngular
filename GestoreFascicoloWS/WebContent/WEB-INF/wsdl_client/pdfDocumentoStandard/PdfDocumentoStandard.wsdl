@@ -1,0 +1,58 @@
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<definitions 
+xmlns:tns="http://bpel.pdfdocumentostandard.equitalia.it" 
+xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+xmlns:xmime="http://www.w3.org/2005/05/xmlmime" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" 
+xmlns:ns1="http://xsd.bpel.pdfdocumentostandard.equitalia.it" 
+xmlns:wsaw="http://www.w3.org/2005/08/addressing"   
+targetNamespace="http://bpel.pdfdocumentostandard.equitalia.it"
+>   
+	
+	<types>
+		<xsd:schema elementFormDefault="qualified" targetNamespace="http://xsd.bpel.pdfdocumentostandard.equitalia.it">
+			<xsd:include schemaLocation="PdfDocumentoStandard.xsd"/>
+		</xsd:schema>
+	</types> 
+	<message name="WSACallBackToHeader">
+		<part name="CallBackTo" element="ns1:CallBackTo"/>
+	</message>
+	<message name="GetPdfDocumentoRequest">
+		<part name="part1" element="ns1:GetPdfDocumentoRequest"/>
+	</message>
+	<message name="GetPdfDocumentoResponse">
+		<part name="part1" element="ns1:GetPdfDocumentoResponse"/>
+	</message>
+	<message name="GetPdfDocumentoFault">
+		<part name="fault" element="ns1:GetPdfDocumentoFault"/>
+	</message>
+	<portType name="PdfDocumentoStandardPortType">
+		<operation name="getPdfDocumento">
+			<input message="tns:GetPdfDocumentoRequest"/>
+			<output message="tns:GetPdfDocumentoResponse"/>
+		</operation>
+	</portType>
+	<binding name="PdfDocumentoStandardSOAP11Binding" type="tns:PdfDocumentoStandardPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getPdfDocumento">
+			<soap:operation soapAction="getPdfDocumento" style="document"/>
+			<input>
+				<soap:body parts="part1" use="literal"/>
+				<soap:header message="tns:WSACallBackToHeader" part="CallBackTo" use="literal"  />
+			</input>
+			<output>
+				<soap:body parts="part1" use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="PdfDocumentoStandard">
+		<port name="PdfDocumentoStandardSOAP11port_http" binding="tns:PdfDocumentoStandardSOAP11Binding">
+			<soap:address location="http://localhost:8080/axis2/services/PdfDocumento"/>
+		</port>
+	</service>
+</definitions>

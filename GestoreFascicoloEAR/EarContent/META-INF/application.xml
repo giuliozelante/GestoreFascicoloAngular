@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application id="Application_ID" version="1.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/application_1_4.xsd">
+	<display-name>GestoreFascicoloEAR</display-name>
+	<module id="WebModule_1438159765353">
+		<web>
+			<web-uri>GestoreFascicolo.war</web-uri>
+			<context-root>/GestoreFascicolo</context-root>
+		</web>
+	</module>
+	<security-role id="SecurityRole_1048883909584">
+		<description>Equitalia S.p.A.</description>
+    	<role-name>FSC</role-name>
+  </security-role>
+	<security-role id="SecurityRole_1437654828646">
+		<role-name>FSC_ADMIN</role-name>
+	</security-role>
+</application>

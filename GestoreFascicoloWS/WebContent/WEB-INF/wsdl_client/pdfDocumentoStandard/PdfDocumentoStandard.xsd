@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xsd:schema 
+xmlns="http://xsd.bpel.pdfdocumentostandard.equitalia.it" 
+xmlns:tns="http://xsd.bpel.pdfdocumentostandard.equitalia.it" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:xmime="http://www.w3.org/2005/05/xmlmime" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:ax="http://xml.apache.org/axis/" 
+xmlns:wsaw="http://www.w3.org/2005/08/addressing" 
+targetNamespace="http://xsd.bpel.pdfdocumentostandard.equitalia.it" 
+elementFormDefault="qualified" 
+attributeFormDefault="unqualified" version="1.1" xml:lang="IT">
+	<xsd:import namespace="http://www.w3.org/2005/05/xmlmime" schemaLocation="xmlmime.xsd"/>
+	<xsd:import namespace="http://www.w3.org/2005/08/addressing" schemaLocation="ws-addr.xsd"/>
+	
+	<xsd:element name="GetPdfDocumentoRequest" type="tns:GetPdfDocumentoRequestType"/>
+	<xsd:element name="GetPdfDocumentoResponse" type="tns:GetPdfDocumentoResponseType"/>	
+	<xsd:element name="GetPdfDocumentoFault" type="tns:GetPdfDocumentoFaultType"/>
+	<xsd:element name="CallBackTo" type="wsaw:EndpointReferenceType"/>
+	<xsd:complexType name="GetPdfDocumentoRequestType">
+		<xsd:sequence>
+			<xsd:element name="CodiceFiscale" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="NumeroDocumento" type="xsd:string"/>
+			<xsd:element name="FlagSincrono" type="xsd:boolean"/>
+			<xsd:element name="ModalitaEstrazione" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GetPdfDocumentoResponseType">
+		<xsd:sequence>
+			<xsd:element name="Esito" type="tns:EsitoType"/>
+			<xsd:choice minOccurs="0">
+				<xsd:element name="CorrelationId" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="MtomAttachment" type="tns:MtomAttachmentType" minOccurs="0"/>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MtomAttachmentType">
+		<xsd:sequence>
+			<xsd:element name="NomeFile" type="xsd:string"/>
+			<xsd:element name="File" type="xmime:base64Binary"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EsitoType">
+		<xsd:sequence>
+			<xsd:element name="CodiceEsito" type="xsd:string"/>
+			<xsd:element name="DescrizioneEsito" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GetPdfDocumentoFaultType">
+		<xsd:sequence>
+			<xsd:element name="faultcode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="faultdescription" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

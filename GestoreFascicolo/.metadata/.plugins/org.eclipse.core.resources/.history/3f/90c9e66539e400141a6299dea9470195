@@ -1,0 +1,1006 @@
+* {
+    font-size: 100%;
+    margin: 0;
+    padding: 0
+}
+html,
+body {
+    height: 100%
+}
+br {
+    line-height: 10px
+}
+h3 {
+    margin: 0
+}
+div#wrapper {
+    min-height: 100%;
+    position: relative;
+    margin: 0 auto -33px
+}
+div#blue_headline {
+    background: #d2e1ef;
+    height: 20%;
+    width: 99%;
+    left: 0
+}
+img#openspace_title {
+    width: 40%;
+    margin: 2% auto 3% 0
+}
+img#logo_eqs_green {
+    float: right;
+    right: 0;
+    position: absolute;
+    top: 0;
+    width: 20%;
+    display: inline
+}
+img#fdc_logo-trans {
+    right: 6%;
+    position: absolute;
+    width: 30%
+}
+img.placeborder {
+    width: 20px;
+    height: 20px;
+    border: 0;
+    float: left;
+    display: inline
+}
+.home {
+    color: #558ed5
+}
+.home ul li {
+    background-repeat: no-repeat;
+    background-position: 0 5px;
+    padding-left: 14px;
+    margin-bottom: 1em;
+    font-style: italic
+}
+header h5 {
+    position: absolute;
+    margin: 1px 0 0 1em;
+    padding: 0
+}
+header h5 strong {
+    color: #0046ad
+}
+div#menu {
+    height: 16px;
+    display: table;
+    margin-bottom: .1em
+}
+div#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 16px
+}
+div#menu ul li {
+    list-style: none;
+    display: inline;
+    height: 16px
+}
+div#menu ul li div.title {
+    float: left;
+    height: 20px !important;
+    font-size: 95%;
+    padding: 0 5px;
+    color: #000;
+    position: relative;
+    top: -4px
+}
+div#menu ul li a div.title {
+    background: #d2e1ef;
+    font-size: 95%;
+    color: #00A
+}
+div#menu ul li div.menu {
+    float: left;
+    width: 7px;
+    height: 16px
+}
+div#menu ul li div.menu.left {
+    background: url(/GestoreFascicolo/images/slice_folder_00.png) left
+}
+div#menu ul li div.menu.right {
+    background: url(/GestoreFascicolo/images/slice_folder_00.png) right
+}
+aside#menuAdmin {
+    float: left;
+    position: relative;
+    margin-top: 3%
+}
+aside#menuAdmin ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    list-style-image: none
+}
+aside#menuAdmin ul li {
+    background: url(/GestoreFascicolo/images/slice_menu_left_00.png) right repeat-x;
+    font-size: 87%;
+    margin-bottom: 1em;
+    padding: 0 10px
+}
+div#breadcrumb {
+    float: left;
+    border-bottom: 1px solid #c5c9d0;
+    font-size: 12px
+}
+.crumbs {
+    display: block
+}
+ul.crumbs {
+    margin: 0;
+    padding: 0
+}
+.crumbs li {
+    position: relative;
+    display: inline;
+    display: inline
+}
+.crumbs li span {
+    color: #555;
+    text-decoration: none
+}
+.crumbs li a,
+.crumbs li a:link,
+.crumbs li a:visited {
+    text-decoration: underline
+}
+.crumbs li a:hover {
+    cursor: pointer
+}
+div#content {
+    height: 100%;
+    min-height: 100%;
+    width: 99%;
+    padding-bottom: 33px;
+    margin: 3em auto 0 auto
+}
+footer,
+.push {
+    width: 100%;
+    height: 33px
+}
+a,
+a img {
+    color: #0046ad;
+    text-decoration: none;
+    outline: 0;
+    border: 0 none transparent
+}
+a:active,
+a:visited {
+    color: #0046ad
+}
+div#adminPanel {
+    width: 50%;
+    position: relative;
+    border: 1px solid #000;
+    margin: 0 auto;
+    padding: 0
+}
+div#adminPanel li {
+    white-space: nowrap;
+    margin: 0 auto;
+    padding: .5em 0
+}
+div#adminPanel label {
+    width: 25%;
+    float: left;
+    display: inline
+}
+div#adminPanel input {
+    width: 69%;
+    text-align: left
+}
+div#error ul {
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 0;
+    padding: 0
+}
+.intestazione {
+    background: #eee;
+    padding: 0 .5em
+}
+.form_hint,
+.required_notification {
+    font-size: 11px
+}
+fieldset {
+    border: 1px solid silver;
+    margin: .5em auto
+}
+fieldset.detail,
+fieldset.detailEntityItemTabella {
+    border: 1px solid #d2e1ef;
+    padding: 0 .3em;
+    vertical-align: top
+}
+fieldset.detail legend div.arrow {
+    cursor: pointer;
+    width: 21px;
+    height: 21px;
+    float: left;
+    background: url(/GestoreFascicolo/images/arrow.png) no-repeat left top;
+    display: inline
+}
+.dataTables_wrapper input,
+.dataTables_wrapper select,
+.dataTables_wrapper label,
+.dataTables_info,
+.dataTables_paginate {
+    font-size: 80%
+}
+fieldset.searchForm ul {
+    display: table;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0
+}
+fieldset.searchForm ul li {
+    text-align: left;
+    margin: 0 .2em
+}
+fieldset.searchForm fieldset label {
+    white-space: nowrap;
+    font-size: 80%;
+    width: 30%;
+    float: left;
+    text-align: right;
+    display: inline
+}
+fieldset.searchForm fieldset {
+    display: block;
+    text-align: right;
+    width: 100%;
+    white-space: nowrap
+}
+fieldset.searchForm fieldset input,
+fieldset.searchForm fieldset select {
+    float: left;
+    width: 50%;
+    text-align: left;
+    font-size: 80%;
+    display: inline;
+    margin: 0 0 0 2em;}
+fieldset.datiAnagrafici input {
+    font-size: 80%
+}
+fieldset.datiAnagrafici label {
+    text-align: left;
+    font-size: 84%;
+    webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: right;
+    margin-top: .1em;
+    font-weight: 700
+}
+fieldset.datiAnagrafici a img {
+    width: 14px;
+    height: 14px;
+    vertical-align: baseline
+}
+#buttonExport {
+  background: url("http://localhost:9080/GestoreFascicolo/images/excel.png") no-repeat right;
+  font-size: 100% !important;
+  color: #000 !important;
+  border: 1px solid #111;
+  height: 40px;
+  margin: 1em .1em;
+  padding: 0.5em 36px 0.5em 0.5em;
+  position: absolute;
+  right: 0;
+}
+.ui-widget {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: .7em
+}
+form ul,
+.datiAnagrafici ul {
+    position: relative;
+    zoom: 1;
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 0;
+    padding: 0
+}
+form ul li div legend,
+fieldset.datiAnagrafici ul li div legend {
+    background: #fff;
+    top: -12px;
+    left: 8px;
+    position: relative
+}
+form.align-left ul li label,
+fieldset.datiAnagrafici.align-left ul li label {
+    text-align: right;
+    margin-left: 1em
+}
+form.align-left ul li input,
+form.align-left ul li select {
+    margin-left: 5px
+}
+form h4 {
+    color: #0046ad;
+    margin: 0
+}
+form label {
+    webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: right;
+    margin-top: .1em;
+    font-weight: 700
+}
+input,
+select {
+    border: 1px solid #ccc;
+    color: #000;
+    padding: 0.2em;
+    -moz-border-radius: 4px
+}
+button.submit {
+    text-decoration: none;
+    border: 1px solid #000;
+    white-space: nowrap;
+    font-size: 80%;
+    padding: 4px;
+    background: #fff
+}
+button.submit:hover {
+    -ms-filter: alpha(opacity 75);
+    filter: alpha(opacity 75);
+    -moz-opacity: .75;
+    -khtml-opacity: .75;
+    opacity: .75;
+    cursor: pointer
+}
+button.exportTable {
+    -webkit-appearance: none;
+    box-shadow: rgba(0, 0, 0, 0), 0px -1px 0px 0px inset;
+    -moz-box-shadow: rgba(0, 0, 0, 0), 0px -1px 0px 0px inset;
+    -webkit-box-shadow: rgba(0, 0, 0, 0), 0px -1px 0px 0px inset;
+    -webkit-font-smoothing: auto;
+    user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    -webkit-writing-mode: horizontal-tb;
+    align-items: flex-start;
+    background-color: #F30000;
+    background-image: none;
+    border-bottom-color: rgb(224, 142, 11);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(224, 142, 11);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgb(224, 142, 11);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(224, 142, 11);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-sizing: border-box;
+    color: #FF0000;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    height: 30px;
+    letter-spacing: normal;
+    line-height: 18px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    position: relative;
+    text-align: center;
+    text-indent: 0px;
+    text-shadow: none;
+    -moz-text-shadow: none;
+    text-transform: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 124.609375px;
+    word-spacing: 0px;
+    writing-mode: lr-tb
+}
+.overlay .popup-overlay {
+    -ms-filter: alpha(opacity 100);
+    filter: alpha(opacity 100);
+    -moz-opacity: 1;
+    -khtml-opacity: 15;
+    opacity: 1;
+    left: 0
+}
+.popup {
+    position: fixed;
+    _position: absolute;
+    top: 25%;
+    display: none;
+    z-index: 9999;
+    font-size: 100%;
+    width: 75%;
+    height: 50%;
+    left: 15%
+}
+.popup .popup-body {
+    background: #fff;
+    text-align: center;
+    border: 3px solid #95b3d7;
+    padding: 20px
+}
+.popup.visible,
+.popup.transitioning {
+    z-index: 9999;
+    display: block
+}
+.popup.visible .popup-body {
+    -ms-filter: alpha(opacity 100);
+    filter: alpha(opacity 100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1
+}
+.popup .popup-exit {
+    cursor: pointer;
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -4%;
+    right: -2.5%;
+    background: url(/GestoreFascicolo/images/x-trans.png) no-repeat
+}
+.popup .popup-content {
+    overflow-y: auto
+}
+.popup-content .popup-title {
+    border-bottom: 1px solid #e9e9e9;
+    padding-bottom: 10px;
+    color: #0046ad
+}
+.popup-content p {
+    color: #0046ad;
+    text-decoration: none
+}
+.popup-content table th {
+    border: 1px solid #95b3d7;
+    color: #17367a;
+    background-color: #eef
+}
+.popup-content table td {
+    border: 1px solid #95b3d7;
+    color: #11f;
+    background-color: #dde
+}
+.rnd_top,
+.rnd_bottom {
+    display: block;
+    background: #fff;
+    font-size: 1px
+}
+.rnd_b1 {
+    display: block;
+    overflow: hidden;
+    height: 1px;
+    background: #fff;
+    margin: 0 5px
+}
+.rnd_b2 {
+    display: block;
+    overflow: hidden;
+    height: 1px;
+    background: #d2e1ef;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-width: 0 2px;
+    margin: 0 3px
+}
+.rnd_b3 {
+    display: block;
+    overflow: hidden;
+    height: 1px;
+    background: #d2e1ef;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    margin: 0 2px
+}
+.rnd_b4 {
+    display: block;
+    overflow: hidden;
+    background: #d2e1ef;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    height: 2px;
+    margin: 0 1px
+}
+.rnd_content {
+    display: block;
+    border: 0 solid #fff;
+    background: #d2e1ef;
+    color: #000;
+    border-width: 0 1px
+}
+div#loading {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    _position: absolute;
+    display: block;
+    min-height: 100%;
+    -ms-filter: alpha(opacity 50);
+    filter: alpha(opacity 50);
+    -moz-opacity: .5;
+    -khtml-opacity: .5;
+    opacity: .5;
+    z-index: 100
+}
+iframe#slct_blck {
+    left: 0;
+    top: 0;
+    border: 0 none;
+    position: fixed;
+    _position: absolute;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    z-index: 101
+}
+img.loading {
+    position: fixed;
+    _position: absolute;
+    z-index: 102
+}
+div.center {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    z-index: 103
+}
+div.alert-message {
+    position: fixed;
+    _position: absolute;
+    clear: both;
+    width: 50%;
+    height: 50%;
+    z-index: 5000;
+    font-weight: 700;
+    font-size: 14px;
+    color: #FFF;
+    background-color: #2ba6cb;
+    border: 1px solid #000000;
+    border: 1px solid rgba(0, 0, 0, 0);
+    float: left;
+    left: 25%;
+    top: 25%;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border: 0px solid #000000;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+    -moz-text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+    display: inline;
+    padding: 13px 12px 12px
+}
+div.alert-message .box-icon {
+    float: left;
+    background-image: url(/GestoreFascicolo/images/icon-trans.png);
+    width: 30px;
+    height: 25px;
+    margin-top: -2px;
+    background-position: -8px -8px;
+    display: inline
+}
+div.alert-message.success {
+    background-color: #5da423;
+    color: #fff;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+    -moz-text-shadow: 0 -1px rgba(0, 0, 0, 0.3)
+}
+div.alert-message.success .box-icon {
+    background-position: -48px -8px
+}
+div.alert-message.warning {
+    background-color: #e3b000;
+    color: #fff;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+    -moz-text-shadow: 0 -1px rgba(0, 0, 0, 0.3)
+}
+div.alert-message.warning .box-icon {
+    background-position: -88px -8px
+}
+div.alert-message.error {
+    background-color: #c60f13;
+    color: #fff;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+    -moz-text-shadow: 0 -1px rgba(0, 0, 0, 0.3)
+}
+div.alert-message.error .box-icon {
+    background-position: -128px -8px
+}
+div.alert-message a.close {
+    color: #333;
+    position: absolute;
+    right: 4px;
+    top: -1px;
+    font-size: 17px;
+    -ms-filter: alpha(opacity 20);
+    filter: alpha(opacity 20);
+    -moz-opacity: .2;
+    -khtml-opacity: .2;
+    opacity: .2;
+    padding: 4px
+}
+div.alert-message a.close:hover,
+div.alert-box a.close:focus {
+    -ms-filter: alpha(opacity 40);
+    filter: alpha(opacity 40);
+    -moz-opacity: .4;
+    -khtml-opacity: .4;
+    opacity: .4
+}
+table.dataTable td {
+    white-space: nowrap;
+    font-size: 77%
+}
+table.dataTable th {
+    white-space: nowrap;
+    font-size: 77%;
+    white-space: nowrap;
+    text-align: left
+}
+table.dataTable caption {
+    white-space: nowrap;
+    text-align: left
+}
+table.dataTable tr.odd {
+    background-color: #fff;
+    vertical-align: top
+}
+table.dataTable tr td.head {
+    cursor: pointer
+}
+table.dataTable tr.odd td.head {
+    background-color: #eee
+}
+table.dataTable tr.even td.head {
+    background-color: #dde
+}
+table.dataTable tr.even {
+    background-color: #eef;
+    vertical-align: top
+}
+table.dataTable tr.even:hover>td {
+    background-color: #dddde8 !important
+}
+table.dataTable tr.odd:hover>td {
+    background-color: #dddde4 !important
+}
+table.dataTable td.buttons {
+    width: 1%;
+    height: 22px;
+    margin: 0;
+    padding: 0
+}
+table.dataTable td.buttons a div.statoPdf {
+    background: url(/GestoreFascicolo/images/pdf_icon-trans.png) no-repeat 0 0;
+    width: 22px;
+    height: 22px;
+    position: relative;
+    display: inline-block
+}
+table.dataTable td.buttons a div.statoRelate {
+    background: url(/GestoreFascicolo/images/folder_document-trans.png) no-repeat 0 0;
+    width: 22px;
+    height: 22px;
+    position: relative;
+    display: inline-block
+}
+table.dettaglioCartella {
+    width: 100%;
+    border: 3px solid #d2e1ef;
+    background: #eee;
+    font-size: 80%
+}
+table.dettaglioCartella th,
+table.dettaglioCartella td {
+    border: 1px solid #ddd;
+    text-align: center
+}
+.color1 {
+    color: #fff
+}
+.calendar {
+    font-size: .9em;
+    background-color: #eee;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    width: 14em;
+    padding: .2em
+}
+.calendar .months {
+    background-color: #d2e1ef;
+    border: 1px solid #aab6c1;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    padding: .2em
+}
+.calendar .prev-month {
+    padding: 0;
+    float: left
+}
+.calendar .next-month {
+    padding: 0;
+    float: right
+}
+.calendar .months .prev-month,
+.calendar .months .next-month {
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    cursor: pointer;
+    padding: 0 .4em
+}
+.calendar .months .prev-month:hover,
+.calendar .months .next-month:hover {
+    background-color: #fdf5ce;
+    color: #c77405
+}
+.calendar table {
+    border-collapse: collapse;
+    font-size: .8em;
+    width: 100%;
+    padding: 0
+}
+.calendar td {
+    text-align: right;
+    width: 14.3%;
+    padding: 1px
+}
+.calendar td span {
+    display: block;
+    color: #1c94c4;
+    background-color: #f6f6f6;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    cursor: pointer;
+    padding: .2em
+}
+.calendar td span:hover {
+    color: #c77405;
+    background-color: #fdf5ce;
+    border: 1px solid #fbcb09
+}
+.calendar td.today span {
+    background-color: #a5f3ff;
+    border: 1px solid #fed22f;
+    color: #363636
+}
+.message {
+    background-size: 40px 40px;
+    -moz-background-size: 40px 40px;
+    -webkit-background-size: 40px 40px;
+    background-image: -webkit-gradient(linear, -71.0% 0%, 0% 71%, from(#FF0000), color-stop(, 25%), color-stop(, 50%), to(75%));
+    background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, .05) 25% transparent 25% transparent 50% rgba(255, 255, 255, .05) 50% rgba(255, 255, 255, .05) 75% transparent 75% transparent);
+    background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, .05) 25% transparent 25% transparent 50% rgba(255, 255, 255, .05) 50% rgba(255, 255, 255, .05) 75% transparent 75% transparent);
+    background-image: -ms-gradient(135deg, rgba(255, 255, 255, .05) 25% transparent 25% transparent 50% rgba(255, 255, 255, .05) 50% rgba(255, 255, 255, .05) 75% transparent 75% transparent);
+    background-image: -o-gradient(135deg, rgba(255, 255, 255, .05) 25% transparent 25% transparent 50% rgba(255, 255, 255, .05) 50% rgba(255, 255, 255, .05) 75% transparent 75% transparent);
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .05) 25% transparent 25% transparent 50% rgba(255, 255, 255, .05) 50% rgba(255, 255, 255, .05) 75% transparent 75% transparent);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorStr='', EndColorStr='');
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.4);
+    -moz-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.4);
+    -webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.4);
+    width: 100%;
+    border: 1px solid;
+    color: #fff;
+    position: fixed;
+    _position: absolute;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    -moz-text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    -webkit-animation: animate-bg 5s linear infinite;
+    animation: animate-bg 5s linear infinite;
+    z-index: 9999;
+    padding: 15px
+}
+.info {
+    background-color: #4ea5cd;
+    border-color: #3b8eb5
+}
+.error {
+    background-color: #de4343;
+    border-color: #c43d3d
+}
+.warning {
+    background-color: #eaaf51;
+    border-color: #d99a36
+}
+.success {
+    background-color: #61b832;
+    border-color: #55a12c
+}
+.message h3 {
+    margin: 0 0 5px
+}
+to {
+    background-position: -80px 0
+}
+.ui-tooltip {
+    font-size: .7em;
+    padding: 1px
+}
+header,
+fieldset.detail div.dataTables_wrapper table,
+.popup-content table,
+#rnd_container,
+table.dataTable {
+    width: 100%
+}
+.home ul,
+ul.actionMessage {
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+fieldset.detail legend span {
+    display: inline
+}
+div#adminPanel li.center,
+.calendar th {
+    text-align: center
+}
+fieldset legend,
+fieldset.searchForm fieldset legend,
+form.align-left ul li,
+fieldset.datiAnagrafici.align-left ul li {
+    text-align: left
+}
+fieldset ul li div,
+form li input,
+form li select,
+form li div,
+form li label,
+.calendar .current-month {
+    margin: 0 auto
+}
+fieldset.searchForm {
+    padding: 0 auto
+}
+fieldset.datiAnagrafici {
+    padding: 0 .5em;
+    margin: 1em auto
+}
+fieldset.searchForm fieldsetul li,
+fieldset.datiAnagrafici ul li {
+    white-space: nowrap
+}
+div.alert-message p,
+.message p {
+    margin: 0
+}
+table.dataTable td.buttons a div.statoPdf.RI,
+table.dataTable td.buttons a div.statoRelate.RI {
+    background-position: -22px 0
+}
+table.dataTable td.buttons a div.statoPdf.DI,
+table.dataTable td.buttons a div.statoRelate.DI {
+    background-position: -44px 0
+}
+table.dataTable td.buttons a div.statoPdf.ND,
+table.dataTable td.buttons a div.statoPdf.KO99,
+table.dataTable td.buttons a div.statoRelate.ND,
+table.dataTable td.buttons a div.statoRelate.KO99 {
+    background-position: -66px 0
+}
+.color2,
+.color3 {
+    color: #d2e1ef
+}
+div.list {
+    position: absolute;
+    width: 100%;
+    height: 16px;
+    background: url(/GestoreFascicolo/images/list_bg.png) repeat-x 0 0;
+    cursor: pointer;
+    bottom: 0
+}
+div.list div.arrow {
+    position: relative;
+    margin: auto;
+    height: 16px;
+    width: 16px;
+    background: url(/GestoreFascicolo/images/sort_desc.png) no-repeat -3px -4px
+}
+div.list div.arrow.up {
+    background: url(/GestoreFascicolo/images/sort_asc.png) no-repeat -3px 2px
+}
+div.buttons {
+    text-align: center !important;
+    width: 100%;
+    clear: both;
+    margin: .5em auto
+}
+table.dataTable tr td.link ul li {
+    list-style: none
+}
+table.dataTable tr td.link ul {
+    margin: 0;
+    padding: 0
+}
+@-webkit-keyframes "animate-bg" {
+    from {
+        background-position: 00;
+    }
+    to {
+        background-position: -80px 0;
+    }
+}
+@media screen and (min-width: 760px) {
+    fieldset.searchForm ul li {
+        float: left;
+        width: 24%
+    }
+}
+@media screen and (max-width: 640px) {
+    table {
+        overflow-x: auto;
+        display: block
+    }
+}
+.showAfterLoad {
+    visibility: hidden
+}
+.child-odd {
+    background-color: #eee
+}
+.child-even {
+    background-color: #dde
+}
+.contenitoreColonne {
+    width: 100%;
+    min-height: 650px
+}
+.colonnaSinistra {
+    background-color: #d2e1ef;
+    color: #00A;
+    font-size: 95%;
+    width: 200px
+}
+.colonnaSinistra div {
+    margin-top: 70px
+}
+.colonnaSinistra a {
+    margin-left: 10px
+}

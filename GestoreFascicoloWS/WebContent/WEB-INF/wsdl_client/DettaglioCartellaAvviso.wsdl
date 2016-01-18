@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://wsdl.dettagliocartellaavviso.equitalia.it"  name="DettaglioCartellaAvviso" targetNamespace="http://wsdl.dettagliocartellaavviso.equitalia.it">
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://wsdl.dettagliocartellaavviso.equitalia.it">
+			<element name="DettaglioCartellaAvvisoRequest">
+				<complexType>
+					<sequence>
+						<element name="idAmbito" type="string" minOccurs="0"/>
+						<element name="codiceFiscale" type="string"/>
+						<element name="tipologia" type="string"/>
+						<element name="numeroDocumento" type="string"/>
+						<element name="dataRichiesta" type="date"/>
+						<element name="tipoDocumento" type="string"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="DettaglioCartellaAvvisoResponse">
+				<complexType>
+					<sequence>
+						<element name="esito" type="string"/>
+						<element name="descrizioneEsito" type="string"/>
+						<element name="cartellaAvviso" type="tns:cartellaAvvisoType" minOccurs="0"/>
+					</sequence>
+				</complexType>
+			</element>
+			<complexType name="cartellaAvvisoType">
+				<sequence>
+					<element name="Documento" type="tns:DocumentoType" minOccurs="0"/>
+					<element name="Tributi" type="tns:TributiType" minOccurs="0"/>
+					<element name="PianoRateOrigine" type="tns:PianoRateOrigineType" minOccurs="0"/>
+					<element name="PianiRateazione" type="tns:PianiRateazioneType" minOccurs="0"/>
+					<element name="Procedure" type="tns:ProcedureType" minOccurs="0"/>
+					<element name="Quietanze" type="tns:QuietanzeType" minOccurs="0"/>
+				</sequence>
+			</complexType>
+			<complexType name="DocumentoType">
+				<sequence>
+					<element name="IdDocumento" type="tns:IdentificativoDocumentoType"/>
+					<element name="Ente" type="tns:EnteType" maxOccurs="unbounded"/>
+					<element name="AnnoEmissione" type="string"/>
+					<element name="StatoDocumento" type="tns:StatoDocumentoType"/>
+					<element name="DataNotifica" type="date" minOccurs="0"/>
+					<element name="NumeroRav" type="tns:NumeroRavType" minOccurs="0"/>
+					<element name="SommarioTributi" type="tns:FlagPresenzaType" minOccurs="0">
+						<annotation>
+							<documentation>Fornisce un riepilogo sul numero di tributi
+								associati alla cartella.</documentation>
+						</annotation>
+					</element>
+					<element name="ImportoTotaleDocumento" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoPagatoDocumento" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoResiduoDocumento" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoInizialeTributi" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoPagatoTributi" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoResiduoTributi" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoTotaleNotifica" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoPagatoNotifica" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoResiduoNotifica" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoTotaleCompensi" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoPagatoCompensi" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoResiduoCompensi" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoInteressiMora" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoAltreSpese" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoSpeseProcedure" type="tns:ImportoType" minOccurs="0"/>
+					<element name="FlagRateazione" type="tns:FlagPresenzaType" minOccurs="0"/>
+					<element name="FlagSgravio" type="tns:FlagPresenzaType" minOccurs="0"/>
+					<element name="FlagSospensione" type="tns:FlagPresenzaType" minOccurs="0"/>
+					<element name="FlagProcedura" type="tns:FlagPresenzaType" minOccurs="0"/>
+					<element name="CodiceEsitoDettaglio" type="tns:CodiceEsitoType"/>
+					<element name="ImportoTotaleSgravato" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoTotaleSospeso" type="tns:ImportoType" minOccurs="0"/>
+				</sequence>
+			</complexType>
+			<complexType name="TributiType">
+				<sequence>
+					<element name="NumeroTributi" type="int" minOccurs="0"/>
+					<element name="ListaTributi" type="tns:TributoRispostaType" minOccurs="0"/>
+				</sequence>
+			</complexType>
+			<complexType name="TributoRispostaType">
+				<sequence>
+					<element name="EsitoOperazione" type="tns:EsitoOperazioneType"/>
+					<element name="Tributo" type="tns:TributoType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</complexType>
+			<complexType name="TributoType">
+				<sequence>
+					<element name="IdDocumento" type="tns:IdentificativoDocumentoType"/>
+					<element name="CodiceTributo" type="tns:CodiceTributoType"/>
+					<element name="DescrizioneTributo" type="string"/>
+					<element name="DescrizioneTributoRuolo" type="string"/>
+					<element name="ProgressivoTributo" type="int"/>
+					<element name="AnnoPartita" type="string"/>
+					<element name="NumeroPartita" type="string"/>
+					<element name="NumeroRuolo" type="string"/>
+					<element name="AnnoTributo" type="string"/>
+					<element name="Ente" type="tns:EnteType"/>
+					<element name="ImportoIniziale" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoPagato" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoInteressiMR" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoSgravato" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoResiduoTotale" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoSospeso" type="tns:ImportoType" minOccurs="0"/>
+					<element name="ImportoResiduoCorrente" type="tns:ImportoType" minOccurs="0"/>
+					<element name="Rateizzabile" type="tns:FlagPresenzaType"/>
+				</sequence>
+			</complexType>
+			<complexType name="PianiRateazioneType">
+				<sequence>
+					<element name="NumeroPianiRateazione" type="int" minOccurs="0"/>
+					<element name="ListaPianiRateazione" type="tns:PianoRateazioneRispostaType" minOccurs="0"/>
+				</sequence>
+			</complexType>
+			<complexType name="PianoRateazioneRispostaType">
+				<sequence>
+					<element name="EsitoOperazione" type="tns:EsitoOperazioneType"/>
+					<element name="PianoRateazione" type="tns:PianoRateazioneType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</complexType>
+			<complexType name="PianoRateazioneType">
+				<sequence>
+					<element name="CodiceFiscale" type="tns:CodiceFiscaleType"/>
+					<element name="DataApprovazione" type="string" minOccurs="0"/>
+					<element name="EnteConcedente" type="tns:EnteType"/>
+					<element name="StatoPiano" type="string"/>
+					<element name="Rata" type="tns:RataType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="DocumentoAssociato" type="tns:IdentificativoDocumentoType" maxOccurs="unbounded"/>
+					<element name="Protocollo" type="string" minOccurs="0"/>
+				</sequence>
+			</complexType>
+			<complexType name="ProcedureType">
+				<sequence>
+					<element name="NumeroProcedure" type="int" minOccurs="0"/>
+					<element name="ListaProcedure" type="tns:ProceduraRispostaType" minOccurs="0"/>
+				</sequence>
+			</complexType>
+			<complexType name="ProceduraRispostaType">
+				<sequence>
+					<element name="EsitoOperazione" type="tns:EsitoOperazioneType"/>
+					<element name="Procedura" type="tns:ProceduraType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</complexType>
+			<complexType name="ProceduraType">
+				<sequence>
+					<element name="CodiceFiscale" type="tns:CodiceFiscaleType"/>
+					<element name="IdProcedura" type="string"/>
+					<element name="AnnoProcedura" type="string"/>
+					<element name="TipoProcedura" type="tns:TipoProceduraType"/>
+					<element name="DescrizioneProcedura" type="string"/>
+					<element name="DataApertura" type="date"/>
+					<element name="DataChiusura" type="date"/>
+					<element name="StatoProcedura" type="string"/>
+					<element name="DocumentoAssociato" type="tns:IdentificativoDocumentoType" maxOccurs="unbounded"/>
+				</sequence>
+			</complexType>
+			<complexType name="TipoProceduraType">
+				<sequence>
+					<element name="CodiceTipoProcedura" type="string"/>
+					<element name="DescrizioneTipoProcedura" type="string"/>
+				</sequence>
+			</complexType>
+			<complexType name="QuietanzeType">
+				<sequence>
+					<element name="numeroQuietanze" type="int"/>
+					<element name="ListaQuietanze" type="tns:ListaQuietanzeType" minOccurs="0"/>
+				</sequence>
+			</complexType>
+			<complexType name="PianoRateOrigineType">
+				<sequence>
+					<element name="Rata" type="tns:RataType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</complexType>
+			<complexType name="ListaQuietanzeType">
+				<sequence>
+					<element name="quietanza" type="tns:QuietanzaType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</complexType>
+			<complexType name="QuietanzaType">
+				<sequence>
+					<element name="numeroQuietanza" type="tns:NumeroQuietanzaType" default="0"/>
+					<element name="tipoPagamento" type="tns:TipoCanalePagamentoType" default=""/>
+					<element name="canalePagamento" type="tns:TipoCanalePagamentoType" default=""/>
+					<element name="dataPagamento" type="tns:DataType" default="0001-01-01"/>
+					<element name="importoQuietanza" type="tns:ImportoType" default="0"/>
+					<element name="quietanzaAnnullata" type="tns:IndicatoreQuietanzeAnnullateType"/>
+					<element name="dataAnnulloQuietanza" type="tns:DataType" default="0001-01-01" minOccurs="0"/>
+					<element name="codiceFiscaleVersante" type="tns:CodiceFiscaleType" default=""/>
+					<element name="importoTributi" type="tns:ImportoType" default="0"/>
+					<element name="importoInteressiMora" type="tns:ImportoType" default="0"/>
+					<element name="importoCompensi" type="tns:ImportoType" default="0"/>
+					<element name="importoDirittiNotifica" type="tns:ImportoType" default="0"/>
+					<element name="importoSpese" type="tns:ImportoType" default="0"/>
+					<element name="tributiQuietanza" type="tns:TributiQuietanzaType"/>
+				</sequence>
+			</complexType>
+			<complexType name="TributiQuietanzaType">
+				<sequence>
+					<element name="tributoQuietanza" type="tns:TributoQuietanzaType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</complexType>
+			<complexType name="TributoQuietanzaType">
+				<sequence>
+					<element name="codiceTributo" type="tns:CodiceTributoType" default=""/>
+					<element name="descrizioneTributo" type="tns:DescrizioneTributoType" default=""/>
+					<element name="progressivoTributo" type="tns:ProgressivoTributoType" default="0"/>
+					<element name="annoTributo" type="tns:AnnoType" default="0"/>
+					<element name="annoRuolo" type="tns:AnnoType" default="0"/>
+					<element name="numeroRuolo" type="tns:NumeroRuoloType" default="0"/>
+					<element name="codiceEnte" type="tns:CodiceEnteType" default="0"/>
+					<element name="tipoUfficio" type="tns:TipoUfficioType" default="" minOccurs="0"/>
+					<element name="codiceUfficio" type="tns:CodiceUfficioType" default="" minOccurs="0"/>
+					<element name="descrizioneEnte" type="tns:DescrizioneEnteType" default=""/>
+					<element name="importoTributi" type="tns:ImportoType" default="0"/>
+					<element name="importoInteressiMora" type="tns:ImportoType" default="0"/>
+					<element name="importoCompensi" type="tns:ImportoType" default="0"/>
+					<element name="importoDirittiNotifica" type="tns:ImportoType" default="0"/>
+					<element name="importoSpese" type="tns:ImportoType" default="0"/>
+				</sequence>
+			</complexType>
+			<complexType name="RataType">
+				<sequence>
+					<element name="DataScadenza" type="string" minOccurs="0"/>
+					<element name="ImportoRata" type="tns:ImportoType"/>
+					<element name="NumeroRav" type="tns:NumeroRavType" minOccurs="0"/>
+					<element name="StatoRata" type="string"/>
+					<element name="ProgressivoRata" type="int"/>
+				</sequence>
+			</complexType>
+			<complexType name="EsitoOperazioneType">
+				<sequence>
+					<element name="CodiceEsito" type="tns:CodiceEsitoType"/>
+					<element name="DescrizioneEsito" type="tns:DescrizioneEsitoType"/>
+					<element name="TotaleDocumenti" type="int"/>
+					<element name="TotalePagine" type="int"/>
+					<element name="DocumentiPaginaCorrente" type="int"/>
+					<element name="NumeroPaginaCorrente" type="int"/>
+				</sequence>
+			</complexType>
+			<complexType name="IdentificativoDocumentoType">
+				<sequence>
+					<element name="NumeroDocumento" type="string"/>
+					<element name="TipoDocumento" type="string"/>
+				</sequence>
+			</complexType>
+			<complexType name="EnteType">
+				<sequence>
+					<element name="CodiceEnte" type="string"/>
+					<element name="CodiceUfficio" type="string"/>
+					<element name="TipoUfficio" type="string"/>
+					<element name="Descrizione" type="string" minOccurs="0"/>
+				</sequence>
+			</complexType>
+			<simpleType name="StatoDocumentoType">
+				<restriction base="string"/>
+			</simpleType>
+			<simpleType name="NumeroRavType">
+				<restriction base="string"/>
+			</simpleType>
+			<simpleType name="FlagPresenzaType">
+				<annotation>
+					<documentation>Flag di presenza. 0 , non presente -1, presente, ma
+						impossibile definire il numero -2, impossibile
+						determinare la presenza -3, operazione non implementata
+						> 0 presente e numero indicato in modo preciso</documentation>
+				</annotation>
+				<restriction base="int">
+					<minInclusive value="-1"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="IdentificativoChiamanteType">
+				<restriction base="string">
+					<maxLength value="10"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="CodUtenteType">
+				<restriction base="string">
+					<maxLength value="10"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="CodAmbitoType">
+				<restriction base="integer">
+					<totalDigits value="3"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="NumeroCartellaType">
+				<restriction base="string">
+					<maxLength value="20"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="CodiceFiscaleType">
+				<restriction base="string">
+					<maxLength value="16"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="IndicatoreQuietanzeAnnullateType">
+				<restriction base="string">
+					<enumeration value="0"/>
+					<enumeration value="1"/>
+					<enumeration value="2"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="NumeroType">
+				<restriction base="integer">
+					<totalDigits value="3"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="CodiceEsitoType">
+				<restriction base="string">
+					<maxLength value="2"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="DescrizioneEsitoType">
+				<restriction base="string">
+					<maxLength value="80"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="ImportoType">
+				<restriction base="decimal">
+					<totalDigits value="15"/>
+					<fractionDigits value="2"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="NumeroQuietanzeDaRestituireType">
+				<restriction base="integer">
+					<totalDigits value="6"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="NumeroQuietanzaType">
+				<restriction base="integer">
+					<totalDigits value="7"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="TipoCanalePagamentoType">
+				<restriction base="string">
+					<maxLength value="30"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="DataType">
+				<restriction base="date"/>
+			</simpleType>
+			<simpleType name="CodiceTributoType">
+				<restriction base="string">
+					<maxLength value="4"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="DescrizioneTributoType">
+				<restriction base="string">
+					<maxLength value="50"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="ProgressivoTributoType">
+				<restriction base="integer">
+					<totalDigits value="3"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="AnnoType">
+				<restriction base="integer">
+					<totalDigits value="4"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="NumeroRuoloType">
+				<restriction base="integer">
+					<totalDigits value="7"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="CodiceEnteType">
+				<restriction base="integer">
+					<totalDigits value="5"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="TipoUfficioType">
+				<restriction base="string">
+					<maxLength value="1"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="CodiceUfficioType">
+				<restriction base="string">
+					<maxLength value="6"/>
+				</restriction>
+			</simpleType>
+			<simpleType name="DescrizioneEnteType">
+				<restriction base="string">
+					<maxLength value="50"/>
+				</restriction>
+			</simpleType>
+		</schema>
+	</types>
+	<message name="DettaglioCartellaAvvisoRequestMessage">
+		<part name="payload" element="tns:DettaglioCartellaAvvisoRequest"/>
+	</message>
+	<message name="DettaglioCartellaAvvisoResponseMessage">
+		<part name="payload" element="tns:DettaglioCartellaAvvisoResponse"/>
+	</message>
+	<portType name="DettaglioCartellaAvvisoPortType">
+		<operation name="process">
+			<input message="tns:DettaglioCartellaAvvisoRequestMessage"/>
+			<output message="tns:DettaglioCartellaAvvisoResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="DettaglioCartellaAvvisoBinding" type="tns:DettaglioCartellaAvvisoPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="process">
+			<soap:operation soapAction="http://bpel.dettagliocartella.equitalia.it/process"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="DettaglioCartellaAvviso">
+		<port name="DettaglioCartellaAvvisoPort" binding="tns:DettaglioCartellaAvvisoBinding">
+			<soap:address location="http://localhost:8080/DettaglioCartellaAvviso"/>
+		</port>
+	</service>
+
+</definitions>

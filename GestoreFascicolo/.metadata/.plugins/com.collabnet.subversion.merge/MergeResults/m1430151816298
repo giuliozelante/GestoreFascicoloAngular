@@ -1,0 +1,34 @@
+:normalEnd:
+project: \GestoreFascicolo
+fromUrl: https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Branches/1.0.0/GestoreFascicolo
+toUrl: https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Branches/1.0.0/GestoreFascicolo
+force: false
+recurse: false
+ignore: false
+depth: 0
+Summary result: type: 0 category: Added number: 4
+Summary result: type: 0 category: Updated number: 12
+Summary result: type: 1 category: Updated number: 2
+
+workspaceUrl: https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk/GestoreFascicolo
+workspaceRevision: 2401
+lowerRevision: 2398
+upperRevision: 2401
+merge https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Branches/1.0.0/GestoreFascicolo C:/lavoro/GestoreFascicolo/GestoreFascicolo
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/.project
+Message: 1 A           C:/lavoro/GestoreFascicolo/GestoreFascicolo/src/it/equitalia/gestorefascicolo/web/bean/FascicoloDataSource.java
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/src/it/equitalia/gestorefascicolo/web/action/FascicoloAction.java
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/src/it/equitalia/gestorefascicolo/web/action/BaseAction.java
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/tiles/header.jsp
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/WEB-INF/web.xml
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/css/stile.css
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/pages/anagraficaFascicolo/dettaglioCartella/dettaglioCartella.jsp
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/pages/anagraficaFascicolo/dettaglioCartella/detailEntityItemTabella.jsp
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/pages/anagraficaFascicolo/documentiEsattoriali/documentiEsattoriali.jsp
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/pages/anagraficaFascicolo/dettaglioFascicolo.jsp
+Message: 1 A           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/images/logo_eqs_green.svg
+Message: 2 A           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/report
+Message: 1 A           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/report/Dettaglio_Fascicolo.jrxml
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/js/main.js
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/.settings/org.eclipse.core.resources.prefs
+Message: 3   U         C:/lavoro/GestoreFascicolo/GestoreFascicolo

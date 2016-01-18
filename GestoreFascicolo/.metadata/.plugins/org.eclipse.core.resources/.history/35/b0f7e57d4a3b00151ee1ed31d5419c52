@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="2.0">
+	<wb-module deploy-name="GestoreFascicolo">
+		<property name="context-root" value="GestoreFascicolo"/>
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="src"/>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.15/f0a0d2e29ed910808c33135a3a5a51bba6358f7b/log4j-1.2.15.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.apache.struts.xwork/xwork-core/2.3.16.3/bacbc7e69e258d6f9b7fc34c2ec57c9c0fb2641c/xwork-core-2.3.16.3.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.apache.struts/struts2-convention-plugin/2.3.16.3/1a91faffb445810e9a57c09ddde6341637089264/struts2-convention-plugin-2.3.16.3.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.apache.struts/struts2-tiles-plugin/2.3.16.3/dd64abb5011b263f222a588929598b2ba60cb8aa/struts2-tiles-plugin-2.3.16.3.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.apache.axis/axis/1.4/94a9ce681a42d0352b3ad22659f67835e560d107/axis-1.4.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.jsoup/jsoup/1.8.1/1eb6690b0c629d7000c77a72df5e822fb974f521/jsoup-1.8.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi/3.10-FINAL/e22fd3bb6a7152bd7d07c7e8901c2451b601725f/poi-3.10-FINAL.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.thymeleaf/thymeleaf/2.1.4.RELEASE/a730d892f3c57ba3d24af2ca657b42d81398a85a/thymeleaf-2.1.4.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/commons-configuration/commons-configuration/1.10/2b36e4adfb66d966c5aef2d73deb6be716389dc9/commons-configuration-1.10.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.1/905075e6c80f206bbe6cf1e809d2caa69f420c76/commons-lang3-3.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/asm/asm/3.3/fb0f302a91a376fd5cfe23167c419375e8fc9b8f/asm-3.3.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/asm/asm-commons/3.3/3630d2095238beee3f94670af3d9a9dc115ce887/asm-commons-3.3.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.apache.struts/struts2-core/2.3.16.3/3cf0054960a5959e569695bf70c41eab89aeda75/struts2-core-2.3.16.3.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.apache.tiles/tiles-core/2.0.6/234c747d4b7d70ec505d39d314db7b4fd443269f/tiles-core-2.0.6.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.apache.tiles/tiles-jsp/2.0.6/19b61ced8324efa01f3dd85c0509a6b473e53168/tiles-jsp-2.0.6.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.5/cf993e250ff71804754ec2734a16f23c0be99f70/commons-codec-1.5.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.16.1-GA/315891b371395271977af518d4db5cee1a0bc9bf/javassist-3.16.1-GA.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.unbescape/unbescape/1.1.0.RELEASE/ab0db4fe0a6fa89fb8da2a40008a4e63a7f3f5b9/unbescape-1.1.0.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.6.6/ce53b0a0e2cfbb27e8a59d38f79a18a5c6a8d2b0/slf4j-api-1.6.6.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/ce1edb914c94ebc388f086c6827e8bdeec71ac2/commons-lang-2.6.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/asm/asm-tree/3.3/33c13070f194e1f0385877ec9306a24e983b00e3/asm-tree-3.3.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.freemarker/freemarker/2.3.19/a251045e5fadd02824d17f1aa8c412accf1aa1c9/freemarker-2.3.19.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/commons-fileupload/commons-fileupload/1.3.1/c621b54583719ac0310404463d6d99db27e1052c/commons-fileupload-1.3.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/org.apache.tiles/tiles-api/2.0.6/729a464b01317f178fdf5c8d0d97328487a3cb0d/tiles-api-2.0.6.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/commons-digester/commons-digester/1.8/dc6a73fdbd1fa3f0944e8497c6c872fa21dca37e/commons-digester-1.8.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging-api/1.1/7d4cf5231d46c8524f9b9ed75bb2d1c69ab93322/commons-logging-api-1.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils/1.7.0/5675fd96b29656504b86029551973d60fb41339b/commons-beanutils-1.7.0.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/ognl/ognl/3.0.8/37e1aebfde7eb7baebc9ad4f85116ef9009c5fc5/ognl-3.0.8.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/javassist/javassist/3.11.0.GA/2c00105734a57e9ee4f27e4b17cd43200e5f0ff8/javassist-3.11.0.GA.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Giulio Zelante/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.2/83b5b8a7ba1c08f9e8c8ff2373724e33d3c1e22a/commons-io-2.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+	</wb-module>
+</project-modules>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xsd:schema 
+xmlns="http://xsd.bpel.relatedocumentostandard.equitalia.it" 
+xmlns:tns="http://xsd.bpel.relatedocumentostandard.equitalia.it" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:wsaw="http://www.w3.org/2005/08/addressing" 
+targetNamespace="http://xsd.bpel.relatedocumentostandard.equitalia.it" 
+elementFormDefault="qualified" 
+attributeFormDefault="unqualified" 
+version="1.1" xml:lang="IT">
+	<xsd:import namespace="http://www.w3.org/2005/08/addressing" schemaLocation="ws-addr.xsd"/>
+	<xsd:element name="GetRelateDocumentoRequest" type="tns:GetRelateDocumentoRequestType"/>
+	<xsd:element name="GetRelateDocumentoResponse" type="tns:GetRelateDocumentoResponseType"/>
+	<xsd:element name="GetRelateDocumentoFault" type="tns:GetRelateDocumentoFaultType"/>
+	<xsd:element name="CallBackTo" type="wsaw:EndpointReferenceType"/>
+	<xsd:complexType name="GetRelateDocumentoRequestType">
+		<xsd:sequence>
+			<xsd:element name="CodiceFiscale" type="xsd:string"/>
+			<xsd:element name="NumeroDocumento" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GetRelateDocumentoResponseType">
+		<xsd:sequence>
+			<xsd:element name="Esito" type="tns:EsitoType"/>
+			<xsd:element name="CorrelationId" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EsitoType">
+		<xsd:sequence>
+			<xsd:element name="CodiceEsito" type="xsd:string"/>
+			<xsd:element name="DescrizioneEsito" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GetRelateDocumentoFaultType">
+		<xsd:sequence>
+			<xsd:element name="faultcode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="faultdescription" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

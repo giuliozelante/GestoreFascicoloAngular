@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.ui.theme" value="simple" />
+    <constant name="struts.mapper.action.prefix.enabled" value="true" />
+    <constant name="struts.date.format" value="0,date,dd.MM.yyyy" />
+    <constant name="format.date" value="{0,date,dd.MM.yyyy}" />
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+    <constant name="struts.custom.i18n.resources" value="globalMessages" />
+    <constant name="arianna:maxCrumbs" value="5" />
+    <constant name="struts.action.excludePattern" value=".*unfiltered.*,.*\\.nofilter"/> <!--  mod 2015-03-12 -->
+    
+    <package extends="tiles-default" name="default">
+        <result-types>
+            <result-type class="org.apache.struts2.views.tiles.TilesResult" name="tiles" />
+        </result-types>
+        <interceptors>
+            <interceptor
+				class="org.softwareforge.struts2.breadcrumb.BreadCrumbInterceptor"
+				name="breadCrumbs">
+                <param name="defaultRewindMode">AUTO</param>
+                <param name="defaultComparator">org.softwareforge.struts2.breadcrumb.NameComparator</param>
+            </interceptor>
+            <interceptor-stack name="appDefault">
+                <interceptor-ref name="defaultStack">
+                    <param name="exception.logEnabled">true</param>
+                    <param name="exception.logLevel">ERROR</param>
+                    <param name="validation.excludeMethods">*</param>
+                </interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="appDefault" />
+        <default-action-ref name="index" />
+        <global-results>
+            <result name="error" type="tiles">error.tile</result>
+            <result name="home" type="tiles">home</result>
+            <result name="invalid.token" type="tiles">error.tile</result>
+        </global-results>
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Throwable"
+				result="error" />
+        </global-exception-mappings>
+        <action name="index">
+            <result>index.jsp</result>
+        </action>
+        <action class="it.equitalia.gestorefascicolo.web.action.StartUpAction" method="{1}" name="*StartUp">
+            <interceptor-ref name="appDefault" />
+            <interceptor-ref name="breadCrumbs" />
+            <result name="success" type="tiles">home</result>
+			<result name="home" type="redirectAction">
+				<param name="actionName">homeStartUp</param>
+			</result>
+			<result name="dettaglioFascicolo" type="redirectAction">
+				<param name="actionName">dettaglioFascicoloStartUp</param>
+			</result>
+			<result name="dettaglioFascicoloCrm" type="redirectAction">
+				<param name="actionName">dettaglioFascicolo</param>
+				<param name="namespace">/admin</param>
+			</result>
+        </action>
+        <action class="it.equitalia.gestorefascicolo.web.action.FascicoloAction" method="{1}" name="*Fascicolo">
+        <interceptor-ref name="appDefault" />
+            <interceptor-ref name="breadCrumbs" />
+            <interceptor-ref name="token">
+                <param name="excludeMethods">apriDocumentiEsattoriali,dettaglioCartella,dettaglio,getPdfDocumento,getPdfEstrattoConto,getRelate,exportExcel,execute,lista</param>
+            </interceptor-ref>
+            <interceptor-ref name="basicStack" />
+            <result name="dettaglioCartella" type="tiles">dettaglioCartella
+			</result>
+			<result name="documentiEsattoriali" type="tiles">documentiEsattoriali
+			</result>
+			<result name="dettaglio" type="tiles">dettaglioFascicolo</result>
+			<result name="lista" type="tiles">ricercaFascicolo</result>
+			<result name="input" type="tiles">ricercaFascicolo</result>
+			<!-- inizio aggiunta bug 2015-04-09 -->
+	        <result name="dettaglioRedirect" type="redirectAction">
+	            <param name="actionName">dettaglioFascicolo</param>         		
+	            <param name="fascicolo.callerId">${fascicolo.callerId}</param>
+        		<param name="fascicolo.fascicoloId">${fascicolo.fascicoloId}</param>
+        		<param name="searchFascicolo.callerId">${searchFascicolo.callerId}</param>
+        		<param name="searchFascicolo.codiceFiscale">${searchFascicolo.codiceFiscale}</param>
+        		<param name="searchFascicolo.dataAperturaA">${searchFascicolo.dataAperturaA}</param>
+        		<param name="searchFascicolo.dataAperturaDa">${searchFascicolo.dataAperturaDa}</param>
+        		<param name="searchFascicolo.dataChiusuraA">${searchFascicolo.dataChiusuraA}</param>
+        		<param name="searchFascicolo.dataChiusuraDa">${searchFascicolo.dataChiusuraDa}</param>
+        		<param name="searchFascicolo.fascicoloId">${searchFascicolo.fascicoloId}</param>
+        		<param name="searchFascicolo.statoFascicolo">${searchFascicolo.statoFascicolo}</param>
+	        </result>
+			<!-- fine aggiunta bug 2015-04-09 -->
+        </action>
+    </package>
+    
+    <package extends="tiles-default" name="adminPanel" namespace="/admin">
+        <result-types>
+            <result-type class="org.apache.struts2.views.tiles.TilesResult" name="tiles" />
+        </result-types>
+        <interceptors>
+            <interceptor
+				class="org.softwareforge.struts2.breadcrumb.BreadCrumbInterceptor"
+				name="breadCrumbs">
+                <param name="defaultRewindMode">AUTO</param>
+                <param name="defaultComparator">org.softwareforge.struts2.breadcrumb.NameComparator</param>
+            </interceptor>
+            <interceptor-stack name="appDefault">
+                <interceptor-ref name="defaultStack">
+                    <param name="exception.logEnabled">true</param>
+                    <param name="exception.logLevel">ERROR</param>
+                    <param name="validation.excludeMethods">*</param>
+                </interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="appDefault" />
+        <default-action-ref name="indexAdmin" />
+        <global-results>
+            <result name="error" type="tiles">error.tile</result>
+            <result name="invalid.token" type="tiles">error.tile</result>
+        </global-results>
+        <action name="indexAdmin">
+            <result>adminPanel.jsp</result>
+        </action>
+        <action name="adminPanel" class="it.equitalia.gestorefascicolo.web.action.AdminPanel">
+            <result name="success" type="tiles">adminPanel</result>
+        </action> 
+        <action class="it.equitalia.gestorefascicolo.web.action.AdminPanel" method="{1}" name="*AdminPanel">
+            <result name="success" type="tiles">adminPanel</result>
+        </action>
+        <action class="it.equitalia.gestorefascicolo.web.action.FascicoloAction" method="{1}" name="*Fascicolo">
+        <interceptor-ref name="appDefault" />
+            <interceptor-ref name="breadCrumbs" />
+            <interceptor-ref name="token">
+                <param name="excludeMethods">apri,chiudi,apriDocumentiEsattoriali,dettaglioCartella,dettaglio,getPdfDocumento,getPdfEstrattoConto,getRelate,salvaAnagrafica,exportExcel,saveAnagrafica,execute,lista</param>
+            </interceptor-ref>
+            <interceptor-ref name="basicStack" />
+            <result name="dettaglioCartella" type="tiles">dettaglioCartella
+			</result>
+			<result name="documentiEsattoriali" type="tiles">documentiEsattoriali
+			</result>
+			<result name="dettaglio" type="tiles">dettaglioFascicolo</result>
+			<result name="lista" type="tiles">ricercaFascicolo</result>
+			<result name="input" type="tiles">ricercaFascicolo</result>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xsd:schema xmlns="http://xsd.bpel.relatedocumentostandardcallback.equitalia.it" xmlns:tns="http://xsd.bpel.relatedocumentostandardcallback.equitalia.it" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xsd.bpel.relatedocumentostandardcallback.equitalia.it" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1" xml:lang="IT">
+	<xsd:element name="CallBackRelateDocumentoRequest" type="tns:CallBackRelateDocumentoRequestType"/>
+	<xsd:element name="CallBackRelateDocumentoResponse" type="tns:CallBackRelateDocumentoResponseType"/>
+	<xsd:element name="CallBackRelateDocumentoFault" type="tns:CallBackRelateDocumentoFaultType"/>
+	<xsd:complexType name="CallBackRelateDocumentoRequestType">
+		<xsd:sequence>
+			<xsd:element name="CorrelationId" type="xsd:string"/>
+			<xsd:element name="CodiceEsito" type="tns:EsitoType"/>
+			<xsd:element name="FileReference" type="tns:FileReferenceType" nillable="true" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CallBackRelateDocumentoResponseType">
+		<xsd:sequence>
+			<xsd:element name="Esito" type="tns:EsitoType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FileReferenceType">
+		<xsd:sequence>
+			<xsd:element name="NomeFile" type="xsd:string"/>
+			<xsd:element name="InternalNumber" type="xsd:string"/>
+			<xsd:element name="QueueManager" type="xsd:string"/>
+			<xsd:element name="Queue" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EsitoType">
+		<xsd:sequence>
+			<xsd:element name="CodiceEsito" type="xsd:string"/>
+			<xsd:element name="DescrizioneEsito" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CallBackRelateDocumentoFaultType">
+		<xsd:sequence>
+			<xsd:element name="faultcode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="faultdescription" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

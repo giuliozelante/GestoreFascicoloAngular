@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="net.sf.jasperreports.engine.JRRuntimeException"/>
+<fullyQualifiedTypeName name="it.equitalia.gestorefascicolo.web.bean.FascicoloDataSource"/>
+<fullyQualifiedTypeName name="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="net.sf.jasperreports.engine.JasperExportManager"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="it.equitalia.gestorefascicolo.web.util.Utils"/>
+<fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.CellStyle"/>
+<fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.Workbook"/>
+<fullyQualifiedTypeName name="org.apache.poi.hssf.usermodel.HSSFCell"/>
+<fullyQualifiedTypeName name="it.equitalia.gestorefascicolo.web.util.CellStyleCacheManager"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="org.jsoup.Jsoup"/>
+<fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.Cell"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.apache.poi.hssf.usermodel.HSSFCellStyle"/>
+<fullyQualifiedTypeName name="com.opensymphony.xwork2.validator.annotations.Validation"/>
+<fullyQualifiedTypeName name="org.softwareforge.struts2.breadcrumb.NameComparator"/>
+<fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.PatternFormatting"/>
+<fullyQualifiedTypeName name="org.apache.poi.hssf.util.CellRangeAddress"/>
+<fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.SheetConditionalFormatting"/>
+<fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.ConditionalFormattingRule"/>
+<fullyQualifiedTypeName name="org.apache.poi.hssf.record.cf.PatternFormatting"/>
+<fullyQualifiedTypeName name="org.apache.poi.hssf.util.HSSFColor"/>
+<fullyQualifiedTypeName name="org.apache.poi.hssf.util.HSSFColor.LIGHT_BLUE"/>
+<fullyQualifiedTypeName name="org.apache.commons.collections.map.HashedMap"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.regex.Pattern"/>
+</qualifiedTypeNameHistroy>

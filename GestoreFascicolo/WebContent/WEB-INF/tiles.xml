@@ -1,0 +1,64 @@
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<definition name="baseLayout" template="/tiles/baseLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="menu" value="/tiles/menu.jsp" />
+		<put-attribute name="menuAdmin" value="" />
+		<put-attribute name="intestazione" value="/tiles/intestazione.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+		<put-attribute name="script" value="" />
+	</definition>
+
+	<definition name="home" extends="baseLayout">
+		<put-attribute name="title" value="Homepage" />
+		<put-attribute name="body" value="/pages/home/home.jsp" />
+	</definition>
+
+	<definition name="adminPanel" extends="baseLayout">
+		<put-attribute name="title" value="Admin Panel" />
+		<put-attribute name="body" value="/pages/adminPanel/admin.jsp" />
+		<put-attribute name="script" value="/pages/adminPanel/script.jsp" />
+		<put-attribute name="menuAdmin" value="/tiles/menuLeftAdmin.jsp" />
+	</definition>
+
+	<definition name="login" extends="baseLayout">
+		<put-attribute name="title" value="Login Page"/>
+		<put-attribute name="body" value="/pages/login/login.jsp" />
+	</definition>
+
+	<definition name="dettaglioFascicolo" extends="baseLayout">
+		<put-attribute name="title" value="Dettaglio Fascicolo" />
+		<put-attribute name="body" value="/pages/anagraficaFascicolo/dettaglioFascicolo.jsp" />
+		<put-attribute name="script" value="/pages/anagraficaFascicolo/script.jsp" />
+	</definition>
+
+	<definition name="dettaglioCartella" extends="baseLayout">
+		<put-attribute name="title" value="Dettaglio Documento" />
+		<put-attribute name="body" value="/pages/anagraficaFascicolo/dettaglioCartella/dettaglioCartella.jsp" />
+		<put-attribute name="script" value="/pages/anagraficaFascicolo/script.jsp" />
+	</definition>
+
+	<definition name="documentiEsattoriali" extends="baseLayout">
+		<put-attribute name="title" value="Documenti Esattoriali" />
+		<put-attribute name="body" value="/pages/anagraficaFascicolo/documentiEsattoriali/documentiEsattoriali.jsp" />
+		<put-attribute name="script" value="/pages/anagraficaFascicolo/script.jsp" />
+	</definition>
+
+ 	<definition name="ricercaFascicolo" extends="baseLayout">
+		<put-attribute name="title" value="Ricerca Fascicolo" />
+		<put-attribute name="body" value="/pages/home/ricercaFascicolo.jsp" />
+		<put-attribute name="script" value="/pages/home/scriptRicercaFascicolo.jsp" />
+	</definition>
+
+	<definition name="error.tile" extends="baseLayout">
+		<put-attribute name="title" value="Errore" />
+		<put-attribute name="body" value="/errore.jsp" />
+		<put-attribute name="script" value="/scriptError.jsp"/>
+	</definition>
+
+</tiles-definitions>

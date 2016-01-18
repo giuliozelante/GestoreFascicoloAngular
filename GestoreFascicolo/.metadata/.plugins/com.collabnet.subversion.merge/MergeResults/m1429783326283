@@ -1,0 +1,18 @@
+:normalEnd:
+project: \GestoreFascicolo
+fromUrl: https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk/GestoreFascicolo
+toUrl: https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk/GestoreFascicolo
+force: false
+recurse: false
+ignore: false
+depth: 0
+Summary result: type: 0 category: Updated number: 1
+Summary result: type: 1 category: Updated number: 1
+
+workspaceUrl: https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Tags/2.1.13/GestoreFascicolo
+workspaceRevision: 2393
+lowerRevision: 2388
+upperRevision: 2393
+merge https://svn.equitaliaservizi.org/gestore_fascicolo/Sorgenti/WAS/WebApp/GestoreFascicolo/Trunk/GestoreFascicolo C:/lavoro/GestoreFascicolo/GestoreFascicolo
+Message: 1 U           C:/lavoro/GestoreFascicolo/GestoreFascicolo/WebContent/js/main.js
+Message: 3   U         C:/lavoro/GestoreFascicolo/GestoreFascicolo

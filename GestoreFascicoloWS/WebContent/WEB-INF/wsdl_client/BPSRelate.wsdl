@@ -1,0 +1,59 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl1="http://source.gestorefascicolows.equitalia.it" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://service.serviziocliente.architetturacin.equitaliaspa.it/" xmlns:tns="http://bpel.relate.equitalia.it" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="BPSRelate" targetNamespace="http://bpel.relate.equitalia.it">
+  <types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://bpel.relate.equitalia.it">
+
+            <element name="BPSRelateRequest">
+                <complexType>
+                    <sequence>
+                        <element name="codiceFiscale" type="string"></element>
+                         <element name="numeroDocumento" type="string"></element>
+                         <element name="fascicoloId" type="string"></element>
+                         <element name="callerId" type="string"></element>
+                    </sequence>
+                </complexType>
+            </element>
+
+            <element name="BPSRelateResponse">
+                <complexType>
+                    <sequence>
+                        <element name="esito" type="string"></element>
+                    </sequence>
+                </complexType>
+            </element>
+            
+        </schema>
+  </types>
+  <message name="BPSRelateRequestMessage">
+    <part name="payload" element="tns:BPSRelateRequest">
+    </part>
+  </message>
+  <message name="BPSRelateResponseMessage">
+    <part name="payload" element="tns:BPSRelateResponse">
+    </part>
+  </message>
+  <portType name="BPSRelate">
+    <operation name="process">
+      <input message="tns:BPSRelateRequestMessage">
+    </input>
+      <output message="tns:BPSRelateResponseMessage">
+    </output>
+    </operation>
+  </portType>
+  <binding name="BPSRelateBinding" type="tns:BPSRelate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <operation name="process">
+      <soap:operation soapAction="http://bpel.relate.equitalia.it/process"></soap:operation>
+      <input>
+        <soap:body use="literal"></soap:body>
+      </input>
+      <output>
+        <soap:body use="literal"></soap:body>
+      </output>
+    </operation>
+  </binding>
+  <service name="BPSRelate">
+    <port name="BPSRelatePort" binding="tns:BPSRelateBinding">
+      <soap:address location="http://drlxwso2mgrtest01.equitaliaservizi.org:9763/services/BPSRelate/"></soap:address>
+    </port>
+  </service>
+</definitions>

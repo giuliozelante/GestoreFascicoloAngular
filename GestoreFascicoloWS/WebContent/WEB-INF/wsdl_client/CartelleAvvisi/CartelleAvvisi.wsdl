@@ -1,0 +1,67 @@
+
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:sd="http://dati.estrattoconto.xsd.servizibe.equitaliaspa.it" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://wsdl.cartelleavvisi.equitalia.it" targetNamespace="http://wsdl.cartelleavvisi.equitalia.it">
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://wsdl.cartelleavvisi.equitalia.it">
+			<import namespace="http://dati.estrattoconto.xsd.servizibe.equitaliaspa.it" schemaLocation="xsd/ecdati.xsd"/>
+			<element name="cartelleAvvisiRequest" type="tns:cartellaAvvisiRequestType"/>
+			<element name="cartelleAvvisiResponse" type="tns:cartelleAvvisiResponseType"/>
+			<complexType name="cartellaAvvisiRequestType">
+				<sequence>
+					<element maxOccurs="1" minOccurs="1" name="codiceFiscale" type="string"/>
+					<element maxOccurs="1" minOccurs="1" name="dataRichiesta" type="date"/>
+					<element maxOccurs="1" minOccurs="1" name="tipologiaRichiesta" type="string"/>
+					<element maxOccurs="1" minOccurs="0" name="tipoDocumento" type="string"/>
+				</sequence>
+			</complexType>
+			<complexType name="cartelleAvvisiResponseType">
+				<sequence>
+					<element maxOccurs="1" minOccurs="1" name="esito" type="string"/>
+					<element maxOccurs="1" minOccurs="1" name="descrizioneEsito" type="string"/>
+					<element maxOccurs="unbounded" minOccurs="0" name="documentiAmbito" type="tns:documentiAmbitoType"/>
+				</sequence>
+			</complexType>
+
+			<complexType name="documentiAmbitoType">
+				<sequence>
+					<element maxOccurs="1" minOccurs="0" name="codiceAmbito" type="string"/>
+					<element maxOccurs="1" minOccurs="0" name="totaleDocumenti" type="int"/>
+					<element maxOccurs="1" minOccurs="0" name="totaleDaPagare" type="sd:ImportoType"/>
+					<element maxOccurs="1" minOccurs="0" name="documenti" type="sd:DocumentoRispostaType"/>
+				</sequence>
+			</complexType>
+		</schema>
+	</types>
+	<message name="CartelleAvvisiResponseMessage">
+		<part name="payload" element="tns:cartelleAvvisiResponse">
+		</part>
+	</message>
+	<message name="CartelleAvvisiRequestMessage">
+		<part name="payload" element="tns:cartelleAvvisiRequest">
+		</part>
+	</message>
+	<portType name="CartelleAvvisi">
+		<operation name="process">
+			<input message="tns:CartelleAvvisiRequestMessage">
+			</input>
+			<output message="tns:CartelleAvvisiResponseMessage">
+			</output>
+		</operation>
+	</portType>
+	<binding name="CartelleAvvisiBinding" type="tns:CartelleAvvisi">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="process">
+			<soap:operation soapAction="http://bpel.cartelleavvisi.equitalia.it/process"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="CartelleAvvisi">
+		<port name="CartelleAvvisiPort" binding="tns:CartelleAvvisiBinding">
+			<soap:address location="http://192.168.1.75:9765/services/CartelleAvvisi/"/>
+		</port>
+	</service>
+</definitions>

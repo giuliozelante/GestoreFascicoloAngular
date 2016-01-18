@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;GestoreFascicolo/WebContent/pages/adminPanel/script.jsp.tmp&apos;" deleteContents="false" description="Delete resource &apos;GestoreFascicolo/WebContent/pages/adminPanel/script.jsp.tmp&apos;" element1="/GestoreFascicolo/WebContent/pages/adminPanel/script.jsp.tmp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1437691800365"/>
+</session>

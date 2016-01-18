@@ -1,0 +1,14 @@
+var gestoreFascicolo = angular.module('gestoreFascicolo', []);
+
+gestoreFascicolo.controller('fascicoloController', function ($scope,$http) {
+  $scope.name = 'Prova';
+  $scope.listaFascicolo = function() {
+	  $http.get("listaFascicolo").success(
+          function(data, status, headers, config) {
+                  $scope.person = data;
+          }).error(function(data, status, headers, config) {
+                          // called asynchronously if an error occurs
+                          // or server returns response with an error status.
+  });
+  };
+});

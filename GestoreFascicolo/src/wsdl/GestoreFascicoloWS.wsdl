@@ -1,0 +1,570 @@
+<wsdl:definitions targetNamespace="http://source.gestorefascicolows.equitalia.it" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://source.gestorefascicolows.equitalia.it" xmlns:intf="http://source.gestorefascicolows.equitalia.it" xmlns:tns1="http://dati.gestorefascicolows.equitalia.it" xmlns:tns2="http://srv.gestorefascicolows.equitalia.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   
+   <wsdl:types>
+      <schema elementFormDefault="qualified" targetNamespace="http://dati.gestorefascicolows.equitalia.it" xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://srv.gestorefascicolows.equitalia.it"/>
+         <element name="aperturaFascicoloWSRequest">
+            <complexType>
+               <sequence>
+                  <element name="fascicoloId" type="xsd:string"/>
+                  <element name="callerId" type="xsd:string"/>
+                  <element name="dataApertura" type="xsd:string"/>
+                  <element name="codiceFiscale" type="xsd:string"/>
+                  <element name="naturaGiuridica" type="xsd:string"/>
+                  <element name="nome" type="xsd:string"/>
+                  <element name="cognome" type="xsd:string"/>
+                  <element name="indirizzo" type="xsd:string"/>
+                  <element name="ragioneSociale" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="aperturaFascicoloWSResponse">
+            <complexType>
+               <sequence>
+                  <element name="esito" type="xsd:string"/>
+                  <element name="descrizione" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="chiusuraFascicoloWSRequest">
+            <complexType>
+               <sequence>
+                  <element name="fascicoloId" type="xsd:string"/>
+                  <element name="dataChiusura" type="xsd:string"/>
+                  <element name="callerId" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="chiusuraFascicoloWSResponse">
+            <complexType>
+               <sequence>
+                  <element name="esito" type="xsd:string"/>
+                  <element name="descrizione" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="getFascicoloWSRequest">
+            <complexType>
+               <sequence>
+                  <element name="fascicoloId" type="xsd:string"/>
+                  <element name="callerId" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <complexType name="indirizzo">
+            <sequence>
+               <element name="indirizzoId" nillable="true" type="xsd:int"/>
+               <element name="indirizzo" nillable="true" type="xsd:string"/>
+               <element name="indirizzoPrincipale" nillable="true" type="xsd:string"/>
+            </sequence>
+         </complexType>
+         <complexType name="telefono">
+            <sequence>
+               <element name="telefonoId" nillable="true" type="xsd:int"/>
+               <element name="telefono" nillable="true" type="xsd:string"/>
+            </sequence>
+         </complexType>
+         <complexType name="eMail">
+            <sequence>
+               <element name="eMailId" nillable="true" type="xsd:int"/>
+               <element name="eMail" nillable="true" type="xsd:string"/>
+            </sequence>
+         </complexType>
+         <complexType name="anagrafica">
+            <sequence>
+               <element name="anagraficaId" nillable="true" type="xsd:int"/>
+               <element name="codiceFiscale" nillable="true" type="xsd:string"/>
+               <element name="naturaGiuridica" nillable="true" type="xsd:string"/>
+               <element maxOccurs="1" minOccurs="0" name="cognome" nillable="true" type="xsd:string"/>
+               <element maxOccurs="1" minOccurs="0" name="nome" nillable="true" type="xsd:string"/>
+               <element maxOccurs="1" minOccurs="0" name="ragioneSociale" nillable="true" type="xsd:string"/>
+               <element maxOccurs="unbounded" minOccurs="0" name="indirizzi" nillable="true" type="tns1:indirizzo"/>
+               <element maxOccurs="unbounded" minOccurs="0" name="telefoni" nillable="true" type="tns1:telefono"/>
+               <element maxOccurs="unbounded" minOccurs="0" name="email" nillable="true" type="tns1:eMail"/>
+            </sequence>
+         </complexType>
+         <complexType name="dataValue">
+            <sequence>
+               <element name="dataValueId" nillable="true" type="xsd:int"/>
+               <element name="dataTypeId" nillable="true" type="xsd:int"/>
+               <element maxOccurs="1" minOccurs="0" name="dataTypeDescr" nillable="true" type="xsd:string"/>
+               <element maxOccurs="1" minOccurs="0" name="renderingType" nillable="true" type="xsd:string"/>
+               <element maxOccurs="1" minOccurs="0" name="titleCssClass" nillable="true" type="xsd:string"/>
+               <element maxOccurs="1" minOccurs="0" name="valueCssClass" nillable="true" type="xsd:string"/>
+               <element maxOccurs="1" minOccurs="0" name="value" nillable="true" type="xsd:string"/>
+               <element maxOccurs="unbounded" minOccurs="0" name="detailDataValues" nillable="true" type="tns1:dataValue"/>
+               <element name="parentDataTypeId" nillable="true" type="xsd:int"/>
+            </sequence>
+         </complexType>
+         <complexType name="entityItem">
+            <sequence>
+               <element name="entityItemId" nillable="true" type="xsd:int"/>
+               <element name="entityId" nillable="true" type="xsd:int"/>
+               <element maxOccurs="1" minOccurs="0" name="entityDescr" nillable="true" type="xsd:string"/>
+               <element maxOccurs="1" minOccurs="0" name="renderingType" nillable="true" type="xsd:string"/>
+               <element maxOccurs="1" minOccurs="0" name="entityItemRef" nillable="true" type="xsd:string"/>
+               <element maxOccurs="unbounded" minOccurs="0" name="dataValues" nillable="true" type="tns1:dataValue"/>
+               <element maxOccurs="unbounded" minOccurs="0" name="detailEntityItems" nillable="true" type="tns1:entityItem"/>
+            </sequence>
+         </complexType>
+         <complexType name="fascicolo">
+            <sequence>
+            	<element name="fascicoloId" nillable="true"
+            		type="xsd:string" />
+            	<element name="callerId" nillable="true"
+            		type="xsd:string" />
+            	<element name="dataApertura" nillable="true"
+            		type="xsd:string" />
+            	<element name="dataChiusura" nillable="true"
+            		type="xsd:string" />
+            	<element name="statoFascicoloId" nillable="true"
+            		type="xsd:int" />
+            	<element name="statoFascicoloDescr" nillable="true"
+            		type="xsd:string" />
+            	<element name="anagrafica" nillable="true"
+            		type="tns1:anagrafica" />
+            	<element maxOccurs="unbounded" minOccurs="0"
+            		name="cartelle" nillable="true" type="tns1:entityItem" />
+            	<element name="chiuso" type="boolean"></element>
+            </sequence>
+         </complexType>
+         <element name="getFascicoloWSResponse">
+            <complexType>
+               <sequence>
+                  <element maxOccurs="1" minOccurs="0" name="fascicolo" nillable="true" type="tns1:fascicolo"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="getCartellaWSRequest">
+            <complexType>
+               <sequence>
+                  <element name="fascicoloId" type="xsd:string"/>
+                  <element name="callerId" type="xsd:string"/>
+                  <element name="numeroCartella" type="xsd:string"/>
+                  <element name="codiceAmbito" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="getCartellaWSResponse">
+            <complexType>
+               <sequence>
+                  <element maxOccurs="1" minOccurs="0" name="fascicolo" nillable="true" type="tns1:fascicolo"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="insertIndirizzoWSRequest">
+            <complexType>
+               <sequence>
+                  <element name="fascicoloId" type="xsd:string"/>
+                  <element name="callerId" type="xsd:string"/>
+                  <element name="indirizzo" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="insertIndirizzoWSResponse">
+            <complexType>
+               <sequence>
+                  <element name="esito" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="deleteIndirizzoWSRequest">
+            <complexType>
+               <sequence>
+                  <element name="fascicoloId" type="xsd:string"/>
+                  <element name="callerId" type="xsd:string"/>
+                  <element name="indirizzoId" type="xsd:int"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="deleteIndirizzoWSResponse">
+            <complexType>
+               <sequence>
+                  <element name="esito" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="insertTelefonoWSRequest">
+            <complexType>
+               <sequence>
+                  <element name="fascicoloId" type="xsd:string"/>
+                  <element name="callerId" type="xsd:string"/>
+                  <element name="telefono" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="insertTelefonoWSResponse">
+            <complexType>
+               <sequence>
+                  <element name="esito" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="deleteTelefonoWSRequest">
+            <complexType>
+               <sequence>
+                  <element name="fascicoloId" type="xsd:string"/>
+                  <element name="callerId" type="xsd:string"/>
+                  <element name="telefonoId" type="xsd:int"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="deleteTelefonoWSResponse">
+            <complexType>
+               <sequence>
+                  <element name="esito" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="insertEmailWSRequest">
+            <complexType>
+               <sequence>
+                  <element name="fascicoloId" type="xsd:string"/>
+                  <element name="callerId" type="xsd:string"/>
+                  <element name="eMail" nillable="true" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="insertEmailWSResponse">
+            <complexType>
+               <sequence>
+                  <element name="esito" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="deleteEmailWSRequest">
+            <complexType>
+               <sequence>
+                  <element name="fascicoloId" type="xsd:string"/>
+                  <element name="callerId" type="xsd:string"/>
+                  <element name="eMailId" type="xsd:int"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="deleteEmailWSResponse">
+            <complexType>
+               <sequence>
+                  <element name="esito" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+	<element name="searchFascicoloWSRequest">
+		 <complexType>
+		    <sequence>
+			  <element name="fascicoloId" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			  <element name="callerId" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		      <element name="statoFascicolo" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+		      <element name="dataAperturaDa" type="xsd:date" minOccurs="0" maxOccurs="1"/>
+		      <element name="dataAperturaA" type="xsd:date" minOccurs="0" maxOccurs="1"/>
+		      <element name="dataChiusuraDa" type="xsd:date" minOccurs="0" maxOccurs="1"/>
+		      <element name="dataChiusuraA" type="xsd:date" minOccurs="0" maxOccurs="1"/>
+		   </sequence>
+		 </complexType>
+
+	</element>
+
+
+	<element name="searchFascicoloWSResponse">  
+		<complexType>
+			<sequence>
+				<element name="fascicoloList" type="tns1:fascicoloList" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+			</sequence>
+		</complexType>
+	</element>
+	
+	
+		<complexType name="fascicoloList">
+			<sequence>
+				<element name="fascicoloId" type="xsd:string" nillable="true" minOccurs="1" maxOccurs="1"/>
+				<element name="callerId" type="xsd:string" nillable="true" minOccurs="1" maxOccurs="1"/>
+				<element name="dataApertura" type="xsd:string" nillable="true" minOccurs="1" maxOccurs="1"/>
+				<element name="dataChiusura" type="xsd:string" nillable="true" minOccurs="1" maxOccurs="1"/>
+				<element name="statoFascicoloId" type="xsd:int" nillable="true" minOccurs="1" maxOccurs="1"/>
+				<element name="statoFascicoloDescr" type="xsd:string" nillable="true" minOccurs="1" maxOccurs="1"/>
+				<element name="codiceFiscale" type="xsd:string" nillable="true" minOccurs="1" maxOccurs="1"/>
+			</sequence> 
+		</complexType>
+	         
+      </schema>
+      <schema elementFormDefault="qualified" targetNamespace="http://srv.gestorefascicolows.equitalia.it" xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://dati.gestorefascicolows.equitalia.it"/>
+         <complexType name="FaultType">
+            <sequence>
+               <element name="code" type="xsd:int"/>
+               <element name="message" nillable="true" type="xsd:string"/>
+            </sequence>
+         </complexType>
+         <element name="Fault" type="tns2:FaultType"/>
+      </schema>
+   </wsdl:types>
+   <wsdl:message name="deleteEmailResponse">
+      <wsdl:part element="tns1:deleteEmailWSResponse" name="deleteEmailWSResponse"/>
+   </wsdl:message>
+   <wsdl:message name="insertTelefonoResponse">
+      <wsdl:part element="tns1:insertTelefonoWSResponse" name="insertTelefonoWSResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getCartellaRequest">
+      <wsdl:part element="tns1:getCartellaWSRequest" name="getCartellaWSRequest"/>
+   </wsdl:message>
+   <wsdl:message name="getCartellaResponse">
+      <wsdl:part element="tns1:getCartellaWSResponse" name="getCartellaWSResponse"/>
+   </wsdl:message>
+   <wsdl:message name="chiusuraFascicoloRequest">
+      <wsdl:part element="tns1:chiusuraFascicoloWSRequest" name="chiusuraFascicoloWSRequest"/>
+   </wsdl:message>
+   <wsdl:message name="insertIndirizzoResponse">
+      <wsdl:part element="tns1:insertIndirizzoWSResponse" name="insertIndirizzoWSResponse"/>
+   </wsdl:message>
+   <wsdl:message name="deleteTelefonoResponse">
+      <wsdl:part element="tns1:deleteTelefonoWSResponse" name="deleteTelefonoWSResponse"/>
+   </wsdl:message>
+   <wsdl:message name="deleteIndirizzoResponse">
+      <wsdl:part element="tns1:deleteIndirizzoWSResponse" name="deleteIndirizzoWSResponse"/>
+   </wsdl:message>
+   <wsdl:message name="deleteEmailRequest">
+      <wsdl:part element="tns1:deleteEmailWSRequest" name="deleteEmailWSRequest"/>
+   </wsdl:message>
+   <wsdl:message name="creazioneFascicoloResponse">
+      <wsdl:part element="tns1:aperturaFascicoloWSResponse" name="aperturaFascicoloWSResponse"/>
+   </wsdl:message>
+   <wsdl:message name="deleteTelefonoRequest">
+      <wsdl:part element="tns1:deleteTelefonoWSRequest" name="deleteTelefonoWSRequest"/>
+   </wsdl:message>
+   <wsdl:message name="insertTelefonoRequest">
+      <wsdl:part element="tns1:insertTelefonoWSRequest" name="insertTelefonoWSRequest"/>
+   </wsdl:message>
+   <wsdl:message name="creazioneFascicoloRequest">
+      <wsdl:part element="tns1:aperturaFascicoloWSRequest" name="aperturaFascicoloWSRequest"/>
+   </wsdl:message>
+   <wsdl:message name="getFascicoloResponse">
+      <wsdl:part element="tns1:getFascicoloWSResponse" name="getFascicoloWSResponse"/>
+   </wsdl:message>
+   <wsdl:message name="chiusuraFascicoloResponse">
+      <wsdl:part element="tns1:chiusuraFascicoloWSResponse" name="chiusuraFascicoloWSResponse"/>
+   </wsdl:message>
+   <wsdl:message name="insertEmailResponse">
+      <wsdl:part element="tns1:insertEmailWSResponse" name="insertEmailWSResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getFascicoloRequest">
+      <wsdl:part element="tns1:getFascicoloWSRequest" name="getFascicoloWSRequest"/>
+   </wsdl:message>
+   <wsdl:message name="insertIndirizzoRequest">
+      <wsdl:part element="tns1:insertIndirizzoWSRequest" name="insertIndirizzoWSRequest"/>
+   </wsdl:message>
+   <wsdl:message name="FaultType">
+      <wsdl:part element="tns2:Fault" name="Fault"/>
+   </wsdl:message>
+   <wsdl:message name="deleteIndirizzoRequest">
+      <wsdl:part element="tns1:deleteIndirizzoWSRequest" name="deleteIndirizzoWSRequest"/>
+   </wsdl:message>
+   <wsdl:message name="insertEmailRequest">
+      <wsdl:part element="tns1:insertEmailWSRequest" name="insertEmailWSRequest"/>
+   </wsdl:message>
+	<wsdl:message name="searchFascicoloRequest">
+		<wsdl:part element="tns1:searchFascicoloWSRequest" name="searchFascicoloWSRequest"/>
+	</wsdl:message>
+	
+	<wsdl:message name="searchFascicoloResponse">
+		<wsdl:part element="tns1:searchFascicoloWSResponse" name="searchFascicoloWSResponse"/>
+	</wsdl:message>
+   
+   <wsdl:portType name="GestoreFascicoloWSInterface">
+      <wsdl:operation name="creazioneFascicolo" parameterOrder="aperturaFascicoloWSRequest">
+         <wsdl:input message="intf:creazioneFascicoloRequest" name="creazioneFascicoloRequest"/>
+         <wsdl:output message="intf:creazioneFascicoloResponse" name="creazioneFascicoloResponse"/>
+         <wsdl:fault message="intf:FaultType" name="FaultType"/>
+      </wsdl:operation>
+      <wsdl:operation name="chiusuraFascicolo" parameterOrder="chiusuraFascicoloWSRequest">
+         <wsdl:input message="intf:chiusuraFascicoloRequest" name="chiusuraFascicoloRequest"/>
+         <wsdl:output message="intf:chiusuraFascicoloResponse" name="chiusuraFascicoloResponse"/>
+         <wsdl:fault message="intf:FaultType" name="FaultType"/>
+      </wsdl:operation>
+      <wsdl:operation name="getFascicolo" parameterOrder="getFascicoloWSRequest">
+         <wsdl:input message="intf:getFascicoloRequest" name="getFascicoloRequest"/>
+         <wsdl:output message="intf:getFascicoloResponse" name="getFascicoloResponse"/>
+         <wsdl:fault message="intf:FaultType" name="FaultType"/>
+      </wsdl:operation>
+      <wsdl:operation name="getCartella" parameterOrder="getCartellaWSRequest">
+         <wsdl:input message="intf:getCartellaRequest" name="getCartellaRequest"/>
+         <wsdl:output message="intf:getCartellaResponse" name="getCartellaResponse"/>
+         <wsdl:fault message="intf:FaultType" name="FaultType"/>
+      </wsdl:operation>
+      <wsdl:operation name="insertIndirizzo" parameterOrder="insertIndirizzoWSRequest">
+         <wsdl:input message="intf:insertIndirizzoRequest" name="insertIndirizzoRequest"/>
+         <wsdl:output message="intf:insertIndirizzoResponse" name="insertIndirizzoResponse"/>
+         <wsdl:fault message="intf:FaultType" name="FaultType"/>
+      </wsdl:operation>
+      <wsdl:operation name="deleteIndirizzo" parameterOrder="deleteIndirizzoWSRequest">
+         <wsdl:input message="intf:deleteIndirizzoRequest" name="deleteIndirizzoRequest"/>
+         <wsdl:output message="intf:deleteIndirizzoResponse" name="deleteIndirizzoResponse"/>
+         <wsdl:fault message="intf:FaultType" name="FaultType"/>
+      </wsdl:operation>
+      <wsdl:operation name="insertTelefono" parameterOrder="insertTelefonoWSRequest">
+         <wsdl:input message="intf:insertTelefonoRequest" name="insertTelefonoRequest"/>
+         <wsdl:output message="intf:insertTelefonoResponse" name="insertTelefonoResponse"/>
+         <wsdl:fault message="intf:FaultType" name="FaultType"/>
+      </wsdl:operation>
+      <wsdl:operation name="deleteTelefono" parameterOrder="deleteTelefonoWSRequest">
+         <wsdl:input message="intf:deleteTelefonoRequest" name="deleteTelefonoRequest"/>
+         <wsdl:output message="intf:deleteTelefonoResponse" name="deleteTelefonoResponse"/>
+         <wsdl:fault message="intf:FaultType" name="FaultType"/>
+      </wsdl:operation>
+      <wsdl:operation name="insertEmail" parameterOrder="insertEmailWSRequest">
+         <wsdl:input message="intf:insertEmailRequest" name="insertEmailRequest"/>
+         <wsdl:output message="intf:insertEmailResponse" name="insertEmailResponse"/>
+         <wsdl:fault message="intf:FaultType" name="FaultType"/>
+      </wsdl:operation>
+      <wsdl:operation name="deleteEmail" parameterOrder="deleteEmailWSRequest">
+         <wsdl:input message="intf:deleteEmailRequest" name="deleteEmailRequest"/>
+         <wsdl:output message="intf:deleteEmailResponse" name="deleteEmailResponse"/>
+         <wsdl:fault message="intf:FaultType" name="FaultType"/>
+      </wsdl:operation>
+      <wsdl:operation name="searchFascicolo" parameterOrder="searchFascicoloWSRequest">
+         <wsdl:input message="intf:searchFascicoloRequest" name="searchFascicoloRequest"/>
+         <wsdl:output message="intf:searchFascicoloResponse" name="searchFascicoloResponse"/>
+         <wsdl:fault message="intf:FaultType" name="FaultType"/>
+      </wsdl:operation>
+      
+   </wsdl:portType>
+   <wsdl:binding name="GestoreFascicoloWSSoapBinding" type="intf:GestoreFascicoloWSInterface">
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="creazioneFascicolo">
+         <wsdlsoap:operation soapAction="urn:aperturaFascicolo"/>
+         <wsdl:input name="creazioneFascicoloRequest">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="creazioneFascicoloResponse">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="FaultType">
+            <wsdlsoap:fault name="FaultType" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="chiusuraFascicolo">
+         <wsdlsoap:operation soapAction="urn:chiusuraFascicolo"/>
+         <wsdl:input name="chiusuraFascicoloRequest">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="chiusuraFascicoloResponse">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="FaultType">
+            <wsdlsoap:fault name="FaultType" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getFascicolo">
+         <wsdlsoap:operation soapAction="urn:getFascicolo"/>
+         <wsdl:input name="getFascicoloRequest">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getFascicoloResponse">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="FaultType">
+            <wsdlsoap:fault name="FaultType" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getCartella">
+         <wsdlsoap:operation soapAction="urn:getCartella"/>
+         <wsdl:input name="getCartellaRequest">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getCartellaResponse">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="FaultType">
+            <wsdlsoap:fault name="FaultType" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="insertIndirizzo">
+         <wsdlsoap:operation soapAction="urn:insertIndirizzo"/>
+         <wsdl:input name="insertIndirizzoRequest">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="insertIndirizzoResponse">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="FaultType">
+            <wsdlsoap:fault name="FaultType" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteIndirizzo">
+         <wsdlsoap:operation soapAction="urn:deleteIndirizzo"/>
+         <wsdl:input name="deleteIndirizzoRequest">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="deleteIndirizzoResponse">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="FaultType">
+            <wsdlsoap:fault name="FaultType" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="insertTelefono">
+         <wsdlsoap:operation soapAction="urn:insertTelefono"/>
+         <wsdl:input name="insertTelefonoRequest">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="insertTelefonoResponse">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="FaultType">
+            <wsdlsoap:fault name="FaultType" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteTelefono">
+         <wsdlsoap:operation soapAction="urn:deleteTelefono"/>
+         <wsdl:input name="deleteTelefonoRequest">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="deleteTelefonoResponse">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="FaultType">
+            <wsdlsoap:fault name="FaultType" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="insertEmail">
+         <wsdlsoap:operation soapAction="urn:insertEmail"/>
+         <wsdl:input name="insertEmailRequest">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="insertEmailResponse">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="FaultType">
+            <wsdlsoap:fault name="FaultType" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteEmail">
+         <wsdlsoap:operation soapAction="urn:deleteEmail"/>
+         <wsdl:input name="deleteEmailRequest">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="deleteEmailResponse">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="FaultType">
+            <wsdlsoap:fault name="FaultType" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="searchFascicolo">
+         <wsdlsoap:operation soapAction="urn:searchFascicolo"/>
+         <wsdl:input name="searchFascicoloRequest">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="searchFascicoloResponse">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="FaultType">
+            <wsdlsoap:fault name="FaultType" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      
+   </wsdl:binding>
+   <wsdl:service name="GestoreFascicoloWS">
+      <wsdl:port binding="intf:GestoreFascicoloWSSoapBinding" name="GestoreFascicoloWS">
+         <wsdlsoap:address location="http://drlxwso2mgrtest01.equitaliaservizi.org:8280/services/GestoreFascicolo/" />
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>
